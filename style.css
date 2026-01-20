@@ -1,0 +1,244 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2b705; /* mostarda */
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+  text-align: center;
+  padding: 16px 0 8px;
+}
+
+.logo img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+h1 {
+  text-align: center;
+  color: #fff;
+  margin: 8px 0 16px;
+  font-size: 22px;
+}
+
+/* =========================
+   CONTAINERS
+========================= */
+.menu,
+.cliente,
+.footer {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  margin: 12px auto;
+  max-width: 600px;
+}
+
+/* =========================
+   ITEM DO CARDÁPIO
+========================= */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   FOTO DO PRODUTO
+========================= */
+.foto-produto {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   INFORMAÇÕES DO ITEM
+========================= */
+.info {
+  flex: 1;
+}
+
+.info h3 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.info .descricao {
+  font-size: 13px;
+  color: #666;
+  margin: 4px 0;
+}
+
+.info strong {
+  color: #e67e22;
+  font-size: 14px;
+}
+
+.preco-dinamico {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* =========================
+   CONTROLE DE QUANTIDADE
+========================= */
+.qtd.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.qtd.vertical button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* BOTÃO + */
+.qtd.vertical button:first-child {
+  background: #25D366;
+}
+
+/* BOTÃO - */
+.qtd.vertical button:last-child {
+  background: #e74c3c;
+}
+
+.valor {
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 22px;
+  text-align: center;
+}
+
+/* =========================
+   CLIENTE
+========================= */
+.cliente input,
+.cliente textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.cliente textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* =========================
+   FOOTER / TOTAL
+========================= */
+.footer {
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.08);
+}
+
+.footer p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* BOTÃO FINALIZAR */
+.footer button {
+  width: 100%;
+  padding: 14px;
+  background: #25D366;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* BOTÃO LIMPAR */
+.btn-limpar {
+  margin-top: 8px;
+  width: 100%;
+  padding: 12px;
+  background: #e74c3c;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-limpar:hover {
+  background: #c0392b;
+}
+
+/* =========================
+   RESPONSIVO (CELULAR)
+========================= */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .item {
+    align-items: flex-start;
+  }
+
+  .foto-produto {
+    width: 70px;
+    height: 70px;
+  }
+
+  .info h3 {
+    font-size: 14px;
+  }
+
+  .info .descricao {
+    font-size: 12px;
+  }
+
+  .footer button {
+    font-size: 16px;
+  }
+
+  .credito {
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+  opacity: 0.8;
+}
+
+}
