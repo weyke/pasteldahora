@@ -48,11 +48,11 @@
     </div>
   </div>
 
-  <div class="item" data-nome="Frango e Queijo" data-preco="9.5">
+  <div class="item" data-nome="Frango e Queijo" data-preco="10">
     <div class="info">
       <span>Frango e Queijo Coalho</span>
       <p class="descricao">Massa crocante, com recheio de frango com queijo coalho</p>
-      <strong>R$ 9,50</strong>
+      <strong>R$ 10,00</strong>
     </div>
 
     <img class="foto-produto" src="img/frango-quei.png" alt="Pastel de Frango">
@@ -64,11 +64,11 @@
     </div>
   </div>
 
-  <div class="item" data-nome="Frango e Queijo" data-preco="9.5">
+  <div class="item" data-nome="Frango e Queijo" data-preco="10">
     <div class="info">
       <span>Frango e Queijo Mussarela</span>
       <p class="descricao">Massa crocante, com recheio de frango com queijo Mussarela</p>
-      <strong>R$ 9,50</strong>
+      <strong>R$ 10,00</strong>
     </div>
 
     <img class="foto-produto" src="img/frango-quei2.png" alt="Pastel de Frango">
@@ -100,7 +100,7 @@
     <div class="info">
       <span>Queijo Mussarela</span>
       <p class="descricao">Massa crocante, com recheio de queijo Mussarela</p>
-      <strong>R$ 9,00</strong>
+      <strong>R$ 8,50</strong>
     </div>
 
     <img class="foto-produto" src="img/queijo.png" alt="Pastel de Frango">
@@ -193,11 +193,10 @@
     </div>
   </div>
 
-  <div class="item" data-nome="Carne" data-preco="8">
+  <div class="item" data-nome="Carne" data-preco="8.00">
     <div class="info">
       <span>Carne</span>
-      <strong>R$ 8,00</strong>
-      <p class="descricao">Massa crocante, com recheio de carne </p>
+      <p class="descricao">Massa crocante, com recheio de carne moida</p>
       <strong>R$ 8,00</strong>
     </div>
 
@@ -210,30 +209,14 @@
     </div>
   </div>
 
-  <div class="item" data-nome="Carne e Queijo" data-preco="9">
+  <div class="item" data-nome="Carne" data-preco="10">
     <div class="info">
-      <span>Carne e Queijo</span>
-      <p class="descricao">Massa crocante, com recheio de carne com queijo </p>
-      <strong>R$ 9,00</strong>
+      <span>Carne com Queijo</span>
+      <p class="descricao">Massa crocante, com recheio de carne moida com queijo coalho</p>
+      <strong>R$ 10,00</strong>
     </div>
 
-    <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel de Frango">
-
-    <div class="qtd vertical">
-      <button onclick="alterarQtd(this, 1)">+</button>
-      <span class="valor">0</span>
-      <button onclick="alterarQtd(this, -1)">−</button>
-    </div>
-  </div>
-
-  <div class="item" data-nome="Carne com Queijo e Milho" data-preco="9.5">
-    <div class="info">
-      <span>Carne com Queijo e Milho</span>
-      <p class="descricao">Massa crocante, com recheio de carne com queijo e milho</p>
-      <strong>R$ 9,50</strong>
-    </div>
-
-    <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel de Frango">
+    <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel de carne-queijo">
 
     <div class="qtd vertical">
       <button onclick="alterarQtd(this, 1)">+</button>
@@ -247,6 +230,25 @@
   <div class="cliente" id="cliente">
     <input type="text" id="nome" placeholder="Seu nome" />
     <textarea id="endereco" placeholder="Endereço para entrega"></textarea>
+  </div>
+
+  <div class="pagamento">
+    <p><strong>Forma de pagamento</strong></p>
+
+    <label>
+      <input type="radio" name="pagamento" value="Dinheiro">
+      💵 Dinheiro
+    </label>
+
+    <label>
+      <input type="radio" name="pagamento" value="Pix">
+      📲 Pix
+    </label>
+
+    <label>
+      <input type="radio" name="pagamento" value="Cartão">
+      💳 Cartão
+    </label>
   </div>
 
   <div class="footer">

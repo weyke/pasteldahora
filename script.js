@@ -5,7 +5,6 @@ const totalEl = document.getElementById('total');
 function alterarQtd(botao, delta) {
   const item = botao.closest('.item');
   const valorEl = item.querySelector('.valor');
-  const adicionaisBox = item.querySelector('.adicionais');
 
   let qtd = Number(valorEl.innerText);
   qtd += delta;
@@ -13,48 +12,17 @@ function alterarQtd(botao, delta) {
   if (qtd < 0) qtd = 0;
   valorEl.innerText = qtd;
 
-  // Mostrar ou esconder adicionais
-  if (adicionaisBox) {
-    adicionaisBox.style.display = qtd > 0 ? 'block' : 'none';
-
-    // Se zerar, limpa os adicionais
-    if (qtd === 0) {
-      adicionaisBox.querySelectorAll('input').forEach(input => {
-        input.checked = false;
-      });
-    }
-  }
-
   calcularTotal();
 }
 
-/* 🧮 Calcular total geral e total por item */
+/* 🧮 Calcular total */
 function calcularTotal() {
   let total = 0;
 
   itens.forEach(item => {
     const qtd = Number(item.querySelector('.valor').innerText);
-    const precoBase = Number(item.dataset.preco);
-    const precoItemEl = item.querySelector('.preco-dinamico');
-
-    let adicionaisTotal = 0;
-    let adicionaisTexto = [];
-
-    item.querySelectorAll('.adicionais input:checked').forEach(add => {
-      adicionaisTotal += Number(add.dataset.preco);
-      adicionaisTexto.push(add.dataset.nome);
-    });
-
-    const subtotal = qtd * (precoBase + adicionaisTotal);
-    total += subtotal;
-
-    // Atualiza preço do item em tempo real
-    if (precoItemEl) {
-      precoItemEl.innerText =
-        qtd > 0
-          ? `Total do item: R$ ${subtotal.toFixed(2).replace('.', ',')}`
-          : '';
-    }
+    const preco = Number(item.dataset.preco);
+    total += qtd * preco;
   });
 
   totalEl.innerText = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
@@ -64,15 +32,24 @@ function calcularTotal() {
 function enviarWhatsApp() {
   const nome = document.getElementById('nome').value.trim();
   const endereco = document.getElementById('endereco').value.trim();
+  const pagamentoEl = document.querySelector('input[name="pagamento"]:checked');
 
   if (!nome || !endereco) {
-    alert("Informe seu nome e endereço.");
+    alert("⚠️ Informe seu nome e endereço para finalizar o pedido.");
+    irParaCliente();
+    return;
+  }
+
+  if (!pagamentoEl) {
+    alert("⚠️ Selecione a forma de pagamento.");
+    irParaCliente();
     return;
   }
 
   let mensagem = `Olá! 👋%0A%0A`;
   mensagem += `👤 Nome: ${nome}%0A`;
-  mensagem += `📍 Endereço: ${endereco}%0A%0A`;
+  mensagem += `📍 Endereço: ${endereco}%0A`;
+  mensagem += `💳 Pagamento: ${pagamentoEl.value}%0A%0A`;
   mensagem += `🛒 Pedido:%0A`;
 
   let total = 0;
@@ -84,31 +61,15 @@ function enviarWhatsApp() {
     if (qtd > 0) {
       temItem = true;
       const nomeItem = item.dataset.nome;
-      const precoBase = Number(item.dataset.preco);
+      const preco = Number(item.dataset.preco);
+      total += qtd * preco;
 
-      let adicionaisTotal = 0;
-      let adicionaisTexto = [];
-
-      item.querySelectorAll('.adicionais input:checked').forEach(add => {
-        adicionaisTotal += Number(add.dataset.preco);
-        adicionaisTexto.push(add.dataset.nome);
-      });
-
-      const subtotal = qtd * (precoBase + adicionaisTotal);
-      total += subtotal;
-
-      mensagem += `- ${qtd}x ${nomeItem}`;
-
-      if (adicionaisTexto.length > 0) {
-        mensagem += ` (%0A   ➕ ${adicionaisTexto.join(', ')})`;
-      }
-
-      mensagem += `%0A`;
+      mensagem += `- ${qtd}x ${nomeItem}%0A`;
     }
   });
 
   if (!temItem) {
-    alert("Selecione pelo menos um item.");
+    alert("⚠️ Selecione pelo menos um item do cardápio.");
     return;
   }
 
@@ -118,9 +79,10 @@ function enviarWhatsApp() {
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
 }
 
-/* 🔄 Inicializa totais ao abrir a página */
+/* 🔄 Inicialização */
 window.onload = calcularTotal;
 
+/* ⬇️ Ir até dados do cliente */
 function irParaCliente() {
   document.getElementById('cliente').scrollIntoView({
     behavior: 'smooth',
@@ -128,6 +90,7 @@ function irParaCliente() {
   });
 }
 
+/* 🧹 Limpar carrinho */
 function limparCarrinho() {
   itens.forEach(item => {
     item.querySelector('.valor').innerText = 0;
@@ -135,22 +98,14 @@ function limparCarrinho() {
 
   calcularTotal();
 
-  // Opcional: limpar dados do cliente
   document.getElementById('nome').value = '';
   document.getElementById('endereco').value = '';
+
+  document.querySelectorAll('input[name="pagamento"]').forEach(r => r.checked = false);
 }
 
+/* ✅ Botão Finalizar */
 function finalizarPedido() {
-  const nome = document.getElementById('nome').value.trim();
-  const endereco = document.getElementById('endereco').value.trim();
-
-  if (!nome || !endereco) {
-    alert("⚠️ Para finalizar o pedido, informe seu nome e endereço de entrega.");
-    irParaCliente();
-    return;
-  }
-
-  enviarWhatsApp();
+  irParaCliente();
+  setTimeout(enviarWhatsApp, 300);
 }
-
-

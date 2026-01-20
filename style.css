@@ -241,4 +241,13 @@ h1 {
   opacity: 0.8;
 }
 
+.pagamento {
+  display: center;
+  text-align: center;
+  gap: 10px;              /* espaço entre botões/itens */
+  margin: 12px auto;
+  max-width: 300px;
+}
+
+
 }
