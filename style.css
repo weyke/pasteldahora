@@ -56,6 +56,7 @@ h1 {
   align-items: center;
   gap: 12px;
   background: #fff;
+  justify-content: space-between;
   padding: 12px;
   margin-bottom: 12px;
   border-radius: 14px;
@@ -66,11 +67,12 @@ h1 {
    FOTO DO PRODUTO
 ========================= */
 .foto-produto {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 12px;
-  flex-shrink: 0;
+  margin-left: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -94,7 +96,9 @@ h1 {
 
 .info strong {
   color: #e67e22;
-  font-size: 14px;
+  font-size: 16px;
+  margin: 4px 0;
+  font-weight: bold;
 }
 
 .preco-dinamico {
@@ -114,12 +118,12 @@ h1 {
 }
 
 .qtd.vertical button {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border: none;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 50%;
+  color: #000000;
+  font-size: 15px;
+  border-radius: 35%;
   cursor: pointer;
   font-weight: bold;
 }
@@ -165,13 +169,17 @@ h1 {
 .footer {
   position: sticky;
   bottom: 0;
+  padding: 4px px; /* ↓ reduz espaço interno */
+  justify-content: auto;
   box-shadow: 0 -2px 6px rgba(0,0,0,0.08);
 }
 
 .footer p {
   font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 16px;
+  color: rgb(39, 37, 37);
+  font-size: 20px;
+  display: center;
+  text-align: center;
 }
 
 /* BOTÃO FINALIZAR */
@@ -242,12 +250,12 @@ h1 {
 }
 
 .pagamento {
+  font-size: 16px;
   display: center;
   text-align: center;
-  gap: 10px;              /* espaço entre botões/itens */
+  gap: 10px;  
   margin: 12px auto;
   max-width: 300px;
 }
-
 
 }
