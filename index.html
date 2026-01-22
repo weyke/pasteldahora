@@ -16,168 +16,131 @@
 
   <h1>Cardápio</h1>
 
-  <section class="grupo-sabor" id="frango">
-    <h2 class="categoria">Pastéis de Frango</h2>
+  <main>
 
-    <div class="item" data-nome="Frango" data-preco="8,5">
-      <div class="info">
-        <h3>Frango</h3>
-        <p class="descricao">Massa crocante, com recheio de frango temperado</p>
-        <strong>R$ 8,50</strong>
-      </div>
-      <img class="foto-produto" src="img/frango.png" alt="Pastel de Frango">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
+    <!-- ================= FRANGO ================= -->
+    <section class="grupo-sabor" id="frango">
+      <h2 class="categoria">Pastéis de Frango</h2>
 
-    <div class="item" data-nome="Frango com Catupiry" data-preco="9">
-      <div class="info">
-        <h3>Frango com Catupiry</h3>
-        <p class="descricao">Massa crocante, com recheio de frango com Catupiry</p>
-        <strong>R$ 9,00</strong>
+      <div class="item" data-nome="Frango" data-preco="8.5">
+        <div class="info">
+          <h3>Frango</h3>
+          <p class="descricao">Massa crocante, com recheio de frango temperado</p>
+          <strong>R$ 8,50</strong>
+        </div>
+        <img class="foto-produto" src="img/frango.png" alt="Pastel de Frango">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/frango-catu.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
 
-    <div class="item" data-nome="Frango e Queijo Coalho" data-preco="10">
-      <div class="info">
-        <h3>Frango e Queijo Coalho</h3>
-        <p class="descricao">Massa crocante, com recheio de frango com queijo coalho</p>
-        <strong>R$ 10,00</strong>
+      <div class="item" data-nome="Frango com Catupiry" data-preco="9">
+        <div class="info">
+          <h3>Frango com Catupiry</h3>
+          <p class="descricao">Massa crocante, com recheio de frango com Catupiry</p>
+          <strong>R$ 9,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-catu.png" alt="Frango com Catupiry">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/frango-quei.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
 
-    <div class="item" data-nome="Frango e Queijo Mussarela" data-preco="10">
-      <div class="info">
-        <h3>Frango e Queijo Mussarela</h3>
-        <p class="descricao">Massa crocante, com recheio de frango com queijo Mussarela</p>
-        <strong>R$ 10,00</strong>
+      <div class="item" data-nome="Frango e Queijo Coalho" data-preco="10">
+        <div class="info">
+          <h3>Frango e Queijo Coalho</h3>
+          <p class="descricao">Massa crocante, com recheio de frango com queijo coalho</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-quei.png" alt="Frango com Queijo Coalho">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/frango-quei2.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
 
-    <div class="item" data-nome="Frango com Queijo e Bacon" data-preco="12">
-      <div class="info">
-        <h3>Frango com Queijo e Bacon</h3>
-        <p class="descricao">Massa crocante, com recheio de frango com queijo e bacon</p>
-        <strong>R$ 12,00</strong>
+      <div class="item" data-nome="Frango e Queijo Mussarela" data-preco="10">
+        <div class="info">
+          <h3>Frango e Queijo Mussarela</h3>
+          <p class="descricao">Massa crocante, com recheio de frango com queijo mussarela</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-quei2.png" alt="Frango com Mussarela">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/frango-bacon.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
 
-  </section>
+      <div class="item" data-nome="Frango com Queijo e Bacon" data-preco="12">
+        <div class="info">
+          <h3>Frango com Queijo e Bacon</h3>
+          <p class="descricao">Massa crocante, com recheio de frango, queijo e bacon</p>
+          <strong>R$ 12,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-bacon.png" alt="Frango com Bacon">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+    </section>
 
-  <section class="grupo-sabor" id="queijo">
-    <h2 class="categoria">Pastéis de Queijo</h2>
+    <!-- ================= QUEIJO ================= -->
+    <section class="grupo-sabor" id="queijo">
+      <h2 class="categoria">Pastéis de Queijo</h2>
 
-    <div class="item" data-nome="Queijo Coalho" data-preco="8.5">
-      <div class="info">
-        <h3>Queijo Coalho</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo Mussarela</p>
-        <strong>R$ 8,50</strong>
+      <div class="item" data-nome="Queijo Coalho" data-preco="8.5">
+        <div class="info">
+          <h3>Queijo Coalho</h3>
+          <p class="descricao">Massa crocante, com recheio de queijo coalho</p>
+          <strong>R$ 8,50</strong>
+        </div>
+        <img class="foto-produto" src="img/queijo.png" alt="Queijo Coalho">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/queijo.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
 
-    <div class="item" data-nome="Queijo Mussarela" data-preco="9">
-      <div class="info">
-        <h3>Queijo Mussarela</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo Mussarela</p>
-        <strong>R$ 9,00</strong>
+      <div class="item" data-nome="Queijo Mussarela" data-preco="9">
+        <div class="info">
+          <h3>Queijo Mussarela</h3>
+          <p class="descricao">Massa crocante, com recheio de queijo mussarela</p>
+          <strong>R$ 9,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-quei2.png" alt="Queijo Mussarela">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/frango-quei2.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
 
-    <div class="item" data-nome="Misto" data-preco="9">
-      <div class="info">
-        <h3>Misto</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo mussarela e presunto</p>
-        <strong>R$ 9,00</strong>
+      <div class="item" data-nome="Misto" data-preco="9">
+        <div class="info">
+          <h3>Misto</h3>
+          <p class="descricao">Queijo mussarela e presunto</p>
+          <strong>R$ 9,00</strong>
+        </div>
+        <img class="foto-produto" src="img/misto.png" alt="Misto">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
       </div>
-      <img class="foto-produto" src="img/misto.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
+    </section>
 
-    <div class="item" data-nome="Pizza" data-preco="9">
-      <div class="info">
-        <h3>Pizza</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo com tomate e orégano</p>
-        <strong>R$ 9,00</strong>
-      </div>
-      <img class="foto-produto" src="img/pizza.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
-
-    <div class="item" data-nome="Bacon com Queijo Coalho" data-preco="9">
-      <div class="info">
-        <h3>Bacon com Queijo Coalho</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo coalho com bacon</p>
-        <strong>R$ 9,00</strong>
-      </div>
-      <img class="foto-produto" src="img/queiijo-bacon.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
-
-    <div class="item" data-nome="Calabresa com Queijo" data-preco="9.5">
-      <div class="info">
-        <h3>Calabresa com Queijo</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo coalho com calabresa</p>
-        <strong>R$ 9,50</strong>
-      </div>
-      <img class="foto-produto" src="img/calabresa.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
-
+    <!-- ================= CARNE ================= -->
     <section class="grupo-sabor" id="carne">
       <h2 class="categoria">Pastéis de Carne</h2>
 
@@ -187,173 +150,60 @@
           <p class="descricao">Massa crocante, com recheio de carne moída</p>
           <strong>R$ 8,50</strong>
         </div>
-        <img class="foto-produto" src="img/carne-ajeitona.png">
+        <img class="foto-produto" src="img/carne-ajeitona.png" alt="Carne Moída">
         <div class="qtd vertical">
           <button onclick="alterarQtd(this, 1)">+</button>
           <span class="valor">0</span>
           <button onclick="alterarQtd(this, -1)">−</button>
         </div>
       </div>
+    </section>
 
-      <div class="item" data-nome="Carne Moída com Queijo coalho" data-preco="10">
-        <div class="info">
-          <h3>Carne Moída com Queijo Coalho</h3>
-          <p class="descricao">Massa crocante, com recheio de carne moída com queijo coalho</p>
-          <strong>R$ 10,00</strong>
-        </div>
-        <img class="foto-produto" src="img/carne-queijo.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-      <div class="item" data-nome="Carne Moída com Queijo mussarela" data-preco="10">
-        <div class="info">
-          <h3>Carne Moída com Queijo Mussarela</h3>
-          <p class="descricao">Massa crocante, com recheio de carne moída com queijo mussarela</p>
-          <strong>R$ 10,00</strong>
-        </div>
-        <img class="foto-produto" src="img/carne-queijo.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-      <h2 class="categoria">Combos</h2>
-
-      <div class="item" data-nome="Combo 2 Pastéis carne + 2 Refrigerante 200ml  " data-preco="21">
-        <div class="info">
-          <h3>Combo 2 Pastéis + 2 Bebidas</h3>
-          <p class="descricao">2 pastéis de carne + 2 refrigerante 200ml sabor Guaraná</p>
-          <strong>R$ 21,00</strong>
-        </div>
-        <img class="foto-produto" src="img/combo.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-      <div class="item" data-nome="Combo 2 Pastéis carne + 2 Refrigerante 200ml  " data-preco="27">
-        <div class="info">
-          <h3>Combo 2 Pastéis + 2 Bebidas + 1 batata P</h3>
-          <p class="descricao">2 pastéis de carne + 2 refrigerante 200ml Guaraná + 1 Batata frita P </p>
-          <strong>R$ 27,00</strong>
-        </div>
-        <img class="foto-produto" src="img/combo2.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-
-      <h2 class="categoria">Petiscos</h2>
-
-      <div class="item" data-nome="Bolinha Queijo 12 und" data-preco="10">
-        <div class="info">
-          <h3>Bolinha Queijo 12 und</h3>
-          <p class="descricao">Queijo</p>
-          <strong>R$ 10,00</strong>
-        </div>
-        <img class="foto-produto" src="img/bolinha-q.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-      <div class="item" data-nome="Mini Coxinha 12 und" data-preco="10">
-        <div class="info">
-          <h3>Mini Coxinha 12 und</h3>
-          <p class="descricao">Frango</p>
-          <strong>R$ 10,00</strong>
-        </div>
-        <img class="foto-produto" src="img/coxinha.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-      <div class="item" data-nome="Batata Frita P" data-preco="6">
-        <div class="info">
-          <h3>Batata Frita P</h3>
-          <p class="descricao">Tamanho P</p>
-          <strong>R$ 6,00</strong>
-        </div>
-        <img class="foto-produto" src="img/batata.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-      <div class="item" data-nome="Batata Frita G" data-preco="10">
-        <div class="info">
-          <h3>Batata Frita G</h3>
-          <p class="descricao">Tamanho G</p>
-          <strong>R$ 10,00</strong>
-        </div>
-        <img class="foto-produto" src="img/batata.png">
-        <div class="qtd vertical">
-          <button onclick="alterarQtd(this, 1)">+</button>
-          <span class="valor">0</span>
-          <button onclick="alterarQtd(this, -1)">−</button>
-        </div>
-      </div>
-
-
+    <!-- ================= BEBIDAS ================= -->
+    <section class="grupo-sabor" id="bebidas">
       <h2 class="categoria">Bebidas</h2>
 
-      <div class="item" data-nome="Refrigerante Guaraná Antarctica Pet 200ml" data-preco="3,5">
+      <div class="item" data-nome="Refrigerante Guaraná 200ml" data-preco="3.5">
         <div class="info">
-          <h3>Refrigerante Guaraná Antarctica Pet 200ml</h3>
-          <p class="descricao">Guaraná</p>
+          <h3>Guaraná Antarctica 200ml</h3>
+          <p class="descricao">Refrigerante</p>
           <strong>R$ 3,50</strong>
         </div>
-        <img class="foto-produto" src="img/guara.png">
+        <img class="foto-produto" src="img/guara.png" alt="Guaraná">
         <div class="qtd vertical">
           <button onclick="alterarQtd(this, 1)">+</button>
           <span class="valor">0</span>
           <button onclick="alterarQtd(this, -1)">−</button>
         </div>
       </div>
+    </section>
 
-      <!-- ================= CLIENTE / PAGAMENTO ================= -->
+    <!-- ================= CLIENTE / PAGAMENTO ================= -->
+    <div class="cliente" id="cliente">
+      <input type="text" id="nome" placeholder="Seu nome" />
+      <textarea id="endereco" placeholder="Endereço para entrega"></textarea>
+    </div>
 
-      <div class="cliente" id="cliente">
-        <input type="text" id="nome" placeholder="Seu nome" />
-        <textarea id="endereco" placeholder="Endereço para entrega"></textarea>
-      </div>
+    <div class="pagamento">
+      <p><strong>Forma de pagamento</strong></p>
+      <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
+      <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
+      <label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>
+    </div>
 
-      <div class="pagamento">
-        <p><strong>Forma de pagamento</strong></p>
-        <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
-        <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
-        <label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>
-      </div>
+    <div class="footer">
+      <p id="total">Total: R$ 0,00</p>
+      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    </div>
 
-      <div class="footer">
-        <p id="total">Total: R$ 0,00</p>
-        <button onclick="finalizarPedido()">Finalizar Pedido</button>
-      </div>
+    <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
 
-      <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+  </main>
 
-      <script src="script.js"></script>
+  <script src="script.js"></script>
 
-      <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
-      <p class="credito">Todos os Direitos Reservados</p>
+  <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
+  <p class="credito">Todos os Direitos Reservados</p>
 
 </body>
 

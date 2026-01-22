@@ -1,5 +1,12 @@
-const itens = document.querySelectorAll('.item');
-const totalEl = document.getElementById('total');
+let itens;
+let totalEl;
+
+/* 🔄 Inicialização correta */
+window.onload = () => {
+  itens = document.querySelectorAll('.item');
+  totalEl = document.getElementById('total');
+  calcularTotal();
+};
 
 /* ➕ / − quantidade */
 function alterarQtd(botao, delta) {
@@ -22,7 +29,10 @@ function calcularTotal() {
   itens.forEach(item => {
     const qtd = Number(item.querySelector('.valor').innerText);
     const preco = Number(item.dataset.preco);
-    total += qtd * preco;
+
+    if (!isNaN(qtd) && !isNaN(preco)) {
+      total += qtd * preco;
+    }
   });
 
   totalEl.innerText = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
@@ -35,7 +45,7 @@ function enviarWhatsApp() {
   const pagamentoEl = document.querySelector('input[name="pagamento"]:checked');
 
   if (!nome || !endereco) {
-    alert("⚠️ Informe seu nome e endereço para finalizar o pedido.");
+    alert("⚠️ Informe seu nome e endereço.");
     irParaCliente();
     return;
   }
@@ -69,7 +79,7 @@ function enviarWhatsApp() {
   });
 
   if (!temItem) {
-    alert("⚠️ Selecione pelo menos um item do cardápio.");
+    alert("⚠️ Selecione pelo menos um item.");
     return;
   }
 
@@ -78,9 +88,6 @@ function enviarWhatsApp() {
   const telefone = "5585981423131";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
 }
-
-/* 🔄 Inicialização */
-window.onload = calcularTotal;
 
 /* ⬇️ Ir até dados do cliente */
 function irParaCliente() {
@@ -100,11 +107,10 @@ function limparCarrinho() {
 
   document.getElementById('nome').value = '';
   document.getElementById('endereco').value = '';
-
   document.querySelectorAll('input[name="pagamento"]').forEach(r => r.checked = false);
 }
 
-/* ✅ Botão Finalizar */
+/* ✅ Finalizar pedido */
 function finalizarPedido() {
   irParaCliente();
   setTimeout(enviarWhatsApp, 300);
