@@ -249,37 +249,18 @@ h1 {
   opacity: 0.8;
 }
 
-.pagamento-box {
-  text-align: center;   /* centraliza o título */
-  margin: 12px auto;
-}
-
-.titulo-pagamento {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .pagamento {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  font-size: 16px;
+  text-align: center;
+  font-size: 16;
 }
 
 .pagamento label {
-  display: flex;
+  transform: scale(1.2);
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
+  margin: 0 10px;
 }
-
-.pagamento input[type="radio"] {
-  transform: scale(1.5);
-  cursor: pointer;
-}
-
 
 .categoria {
   margin-top: 30px;
