@@ -56,11 +56,17 @@ function enviarWhatsApp() {
     return;
   }
 
-  let mensagem = `Olá! 👋%0A%0A`;
-  mensagem += `👤 Nome: ${nome}%0A`;
-  mensagem += `📍 Endereço: ${endereco}%0A`;
-  mensagem += `💳 Pagamento: ${pagamentoEl.value}%0A%0A`;
-  mensagem += `🛒 Pedido:%0A`;
+  let mensagem = `🍽️ *NOVO PEDIDO* 🍽️%0A`;
+  mensagem += `━━━━━━━━━━━━━━%0A%0A`;
+
+  mensagem += `👤 *Cliente*%0A`;
+  mensagem += `Nome: ${nome}%0A`;
+  mensagem += `Endereço: ${endereco}%0A%0A`;
+
+  mensagem += `*Forma de pagamento*%0A`;
+  mensagem += `${pagamentoEl.value}%0A%0A`;
+
+  mensagem += `🛒 *Itens do pedido*%0A`;
 
   let total = 0;
   let temItem = false;
@@ -74,7 +80,7 @@ function enviarWhatsApp() {
       const preco = Number(item.dataset.preco);
       total += qtd * preco;
 
-      mensagem += `- ${qtd}x ${nomeItem}%0A`;
+      mensagem += `• ${qtd}x ${nomeItem}%0A`;
     }
   });
 
@@ -83,11 +89,13 @@ function enviarWhatsApp() {
     return;
   }
 
-  mensagem += `%0A💰 Total: R$ ${total.toFixed(2).replace('.', ',')}`;
+  mensagem += `%0A━━━━━━━━━━━━━━%0A`;
+  mensagem += `💰 *Total:* R$ ${total.toFixed(2).replace('.', ',')}`;
 
   const telefone = "5585981423131";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
 }
+
 
 /* ⬇️ Ir até dados do cliente */
 function irParaCliente() {
