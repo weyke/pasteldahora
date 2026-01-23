@@ -75,11 +75,11 @@
       </div>
     </div>
 
-    <div class="item" data-nome="Frango com Queijo e Bacon" data-preco="12">
+    <div class="item" data-nome="Frango com Queijo e Bacon" data-preco="11.5">
       <div class="info">
         <h3>Frango com Queijo e Bacon</h3>
         <p class="descricao">Massa crocante, com recheio de frango com queijo e bacon</p>
-        <strong>R$ 12,00</strong>
+        <strong>R$ 11,50</strong>
       </div>
       <img class="foto-produto" src="img/frango-bacon.png">
       <div class="qtd vertical">
@@ -129,6 +129,22 @@
         <strong>R$ 9,00</strong>
       </div>
       <img class="foto-produto" src="img/misto.png">
+      <div class="qtd vertical">
+        <button onclick="alterarQtd(this, 1)">+</button>
+        <span class="valor">0</span>
+        <button onclick="alterarQtd(this, -1)">−</button>
+      </div>
+    </div>
+
+    <div class="item" data-nome="Pastel X-tudo" data-preco="12">
+      <div class="info">
+        <h3>Pastel X-tudo</h3>
+        <p class="descricao">Massa crocante, com recheio de queijo coalho e presunto, carne moída , frango , calabresa ,
+          milho
+        </p>
+        <strong>R$ 12,00</strong>
+      </div>
+      <img class="foto-produto" src="img/xtudo.png">
       <div class="qtd vertical">
         <button onclick="alterarQtd(this, 1)">+</button>
         <span class="valor">0</span>
@@ -267,7 +283,6 @@
         </div>
       </div>
 
-
       <h2 class="categoria">Petiscos</h2>
 
       <div class="item" data-nome="Bolinha Queijo 12 und" data-preco="10">
@@ -326,7 +341,6 @@
         </div>
       </div>
 
-
       <h2 class="categoria">Bebidas</h2>
 
       <div class="item" data-nome="Refrigerante Guaraná Antarctica Pet 200ml" data-preco="3.5">
@@ -343,18 +357,27 @@
         </div>
       </div>
 
-      <!-- ================= CLIENTE / PAGAMENTO ================= -->
-
       <div class="cliente" id="cliente">
         <input type="text" id="nome" placeholder="Seu nome" />
         <textarea id="endereco" placeholder="Endereço para entrega"></textarea>
       </div>
 
-      <div class="pagamento">
-        <p><strong>Forma de pagamento</strong></p>
-        <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
-        <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
-        <label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>
+      <div class="pagamento-box">
+        <h3 class="titulo-pagamento">Forma de pagamento</h3>
+
+        <div class="pagamento">
+          <label>
+            <input type="radio" name="pagamento"> 💵 Dinheiro
+          </label>
+
+          <label>
+            <input type="radio" name="pagamento"> 📱 Pix
+          </label>
+
+          <label>
+            <input type="radio" name="pagamento"> 💳 Cartão
+          </label>
+        </div>
       </div>
 
       <div class="footer">
