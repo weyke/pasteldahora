@@ -33,20 +33,6 @@
       </div>
     </div>
 
-    <div class="item" data-nome="Frango com Catupiry" data-preco="9">
-      <div class="info">
-        <h3>Frango com Catupiry</h3>
-        <p class="descricao">Massa crocante, com recheio de frango com Catupiry</p>
-        <strong>R$ 9,00</strong>
-      </div>
-      <img class="foto-produto" src="img/frango-catu.png">
-      <div class="qtd vertical">
-        <button onclick="alterarQtd(this, 1)">+</button>
-        <span class="valor">0</span>
-        <button onclick="alterarQtd(this, -1)">−</button>
-      </div>
-    </div>
-
     <div class="item" data-nome="Frango e Queijo Coalho" data-preco="10">
       <div class="info">
         <h3>Frango e Queijo Coalho</h3>
@@ -94,11 +80,11 @@
   <section class="grupo-sabor" id="queijo">
     <h2 class="categoria">Pastéis de Queijo</h2>
 
-    <div class="item" data-nome="Queijo Coalho" data-preco="8.5">
+    <div class="item" data-nome="Queijo Coalho" data-preco="9">
       <div class="info">
         <h3>Queijo Coalho</h3>
         <p class="descricao">Massa crocante, com recheio de queijo Mussarela</p>
-        <strong>R$ 8,50</strong>
+        <strong>R$ 9,00</strong>
       </div>
       <img class="foto-produto" src="img/queijo.png">
       <div class="qtd vertical">
@@ -139,8 +125,7 @@
     <div class="item" data-nome="Pastel X-tudo" data-preco="12">
       <div class="info">
         <h3>Pastel X-tudo</h3>
-        <p class="descricao">Massa crocante, com recheio de queijo coalho e presunto, carne moída , frango , calabresa ,
-          milho
+        <p class="descricao">Massa crocante, com recheio de queijo coalho e presunto, carne moída , frango , calabresa
         </p>
         <strong>R$ 12,00</strong>
       </div>
@@ -269,6 +254,35 @@
         </div>
       </div>
 
+      <div class="item" data-nome="Combo 2 Pastéis misto + 2 Refrigerante 200ml  " data-preco="21">
+        <div class="info">
+          <h3>Combo 2 Pastéis + 2 Bebidas</h3>
+          <p class="descricao">2 pastéis de misto + 2 refrigerante 200ml sabor Guaraná</p>
+          <strong>R$ 21,00</strong>
+        </div>
+        <img class="foto-produto" src="img/combo.png">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Combo 2 Pastéis frango + 2 Refrigerante 200ml  " data-preco="23">
+        <div class="info">
+          <h3>Combo 2 Pastéis + 2 Bebidas</h3>
+          <p class="descricao">2 pastéis de frango + 2 refrigerante 200ml sabor Guaraná</p>
+          <strong>R$ 23,00</strong>
+        </div>
+        <img class="foto-produto" src="img/combo.png">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+
+
       <h2 class="categoria">Petiscos</h2>
 
       <div class="item" data-nome="Bolinha Queijo 12 und" data-preco="10">
@@ -336,6 +350,62 @@
           <strong>R$ 3,50</strong>
         </div>
         <img class="foto-produto" src="img/guara.png">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Refrigerante Coca Cola Lata 350ml" data-preco="5">
+        <div class="info">
+          <h3>Refrigerante Coca Cola Lata 350ml</h3>
+          <p class="descricao">Guaraná</p>
+          <strong>R$ 5,00</strong>
+        </div>
+        <img class="foto-produto" src="img/cocalata.png">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Refrigerante Coca Cola Lata 350ml" data-preco="5">
+        <div class="info">
+          <h3>Refrigerante Coca Cola Lata Zero 350ml</h3>
+          <p class="descricao">Guaraná</p>
+          <strong>R$ 5,00</strong>
+        </div>
+        <img class="foto-produto" src="img/cocazero.png">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Refrigerante de Caju São Geraldo 350ml" data-preco="5">
+        <div class="info">
+          <h3>Refrigerante de Caju São Geraldo 350ml</h3>
+          <p class="descricao">Guaraná</p>
+          <strong>R$ 5,00</strong>
+        </div>
+        <img class="foto-produto" src="img/cajuina-lata.png">
+        <div class="qtd vertical">
+          <button onclick="alterarQtd(this, 1)">+</button>
+          <span class="valor">0</span>
+          <button onclick="alterarQtd(this, -1)">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Refrigerante São Geraldo Laranja 350ml" data-preco="5">
+        <div class="info">
+          <h3>Refrigerante São Geraldo Laranja 350ml</h3>
+          <p class="descricao">Laranja</p>
+          <strong>R$ 5,00</strong>
+        </div>
+        <img class="foto-produto" src="img/geraldolaranj.png">
         <div class="qtd vertical">
           <button onclick="alterarQtd(this, 1)">+</button>
           <span class="valor">0</span>
