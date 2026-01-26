@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2b705; /* mostarda */
+  background-color: #fabf10; /* mostarda */
 }
 
 /* =========================
@@ -16,11 +16,11 @@ body {
 ========================= */
 .logo {
   text-align: center;
-  padding: 16px 0 8px;
+  padding: 20px 0 8px;
 }
 
 .logo img {
-  max-width: 140px;
+  max-width: 170px;
   width: 100%;
   height: auto;
 }
@@ -67,12 +67,14 @@ h1 {
    FOTO DO PRODUTO
 ========================= */
 .foto-produto {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-left: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  min-width: 85px;
+  min-height: 85px;
+  width: auto;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 22px; /* arredonda o container */
+  overflow: hidden;   /* corta a imagem certinho */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
 }
 
 /* =========================
