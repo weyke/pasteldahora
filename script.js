@@ -123,3 +123,43 @@ function finalizarPedido() {
   irParaCliente();
   setTimeout(enviarWhatsApp, 300);
 }
+
+function verificarHorario() {
+  const agora = new Date();
+  const hora = agora.getHours();
+
+  const lojaAberta = hora >= 17 && hora < 22;
+
+  const loja = document.getElementById('conteudo-loja');
+  const fechada = document.getElementById('loja-fechada');
+  const botaoFinalizar = document.querySelector('.footer button');
+
+  if (!loja || !fechada) return;
+
+  if (lojaAberta) {
+    loja.style.display = 'block';
+    fechada.style.display = 'none';
+  } else {
+    loja.style.display = 'none';
+    fechada.style.display = 'block';
+  }
+  if (botaoFinalizar) {
+  botaoFinalizar.disabled = !lojaAberta;
+  botaoFinalizar.style.opacity = lojaAberta ? '1' : '0.5';
+}
+
+if (!lojaAberta) {
+  fechada.innerHTML = `
+ <h2>⛔ Loja Fechada</h2>
+  <p>Atendimento das <strong>18h às 22h</strong>.</p>
+  <p>O pastel descansa agora 😄</p>`;
+}
+
+}
+
+// garante que o HTML já carregou
+document.addEventListener("DOMContentLoaded", () => {
+  verificarHorario();
+  setInterval(verificarHorario, 60000);
+});
+

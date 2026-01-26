@@ -256,6 +256,11 @@ h1 {
   font-size: 16;
 }
 
+.cliente {
+  text-align: center;
+  font-size: 16;
+}
+
 .pagamento label {
   transform: scale(1.2);
   display: inline-flex;
@@ -270,5 +275,6 @@ h1 {
   padding: 10px;
   border-left: 6px solid #ff9800;
 }
+
 
 }
