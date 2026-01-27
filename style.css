@@ -302,6 +302,38 @@ h1 {
   transform: translateX(-50%) translateY(0);
 }
 
+.menu-topo {
+  position: sticky;      /* fica fixa ao rolar */
+  top: 0;
+  background: #ffffff;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow-x: auto;
+  border-bottom: 1px solid #ddd;
+  z-index: 9999;
+}
+
+.menu-topo a {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: #ffb703;
+  color: #000;
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.menu-topo a:hover {
+  background: #fb8500;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 
 }
