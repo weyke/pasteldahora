@@ -123,7 +123,7 @@ function enviarWhatsApp() {
   mensagem += `%0A━━━━━━━━━━━━━━%0A`;
   mensagem += `💰 *Total:* ${formatarMoeda(total)}`;
 
-  const telefone = "5585920005940";
+  const telefone = "5585981423131";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
 }
 
@@ -175,9 +175,9 @@ function verificarHorario() {
 
   // Atendimento das 18h às 22h10
   const lojaAberta =
-    (hora > 11 && hora < 22) ||
-    (hora === 11 && minuto >= 0) ||
-    (hora === 22 && minuto <= 10);
+    (hora > 18 && hora < 22) ||
+    (hora === 18 && minuto >= 0) ||
+    (hora === 22 && minuto <= 1);
 
   const loja = document.getElementById('conteudo-loja');
   const fechada = document.getElementById('loja-fechada');
@@ -197,7 +197,6 @@ function verificarHorario() {
     fechada.innerHTML = `
       <h2>⛔ Loja fechada</h2>
       <p>Atendimento das <strong>18h às 22h</strong>.</p>
-      <p>O pastel descansa agora 😄</p>
     `;
   }
 }
