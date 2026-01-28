@@ -197,6 +197,7 @@ function verificarHorario() {
     fechada.innerHTML = `
       <h2>⛔ Loja fechada</h2>
       <p>Atendimento das <strong>18h às 22h</strong>.</p>
+      <p>Quinta, Sexta e Sábado</p>
     `;
   } 
   
