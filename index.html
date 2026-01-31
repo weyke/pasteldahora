@@ -49,6 +49,19 @@
       </div>
     </div>
 
+    <div class="item" data-nome="Batata Frita G + cheddar e bacon + " data-preco="6">
+      <div class="info">
+        <h3>Batata Frita G Com cheddar e bacon</h3>
+        <p class="descricao">Tamanho G</p>
+        <strong>R$ 15,00</strong>
+      </div>
+      <img class="foto-produto" src="img/cheddar.png">
+      <div class="qtd vertical">
+        <button onclick="alterarQtd(this, 1)">+</button>
+        <span class="valor">0</span>
+        <button onclick="alterarQtd(this, -1)">−</button>
+      </div>
+    </div>
 
     <section class="grupo-sabor">
       <h2 class="categoria">Pastel da Casa</h2>
@@ -192,13 +205,13 @@
             </div>
           </div>
 
-            <!--<section class="grupo-sabor" id="combos"></section>
+          <section class="grupo-sabor" id="combos"></section>
           <h2 class="categoria">Combos</h2>
 
-        <div class="item" data-nome="2 pastéis de carne + 2 refrigerante coca-cola 250ml" data-preco="21">
+          <div class="item" data-nome="2 pastéis de carne + 1 Coca-cola lata 350ml" data-preco="21">
             <div class="info">
-              <h3>Combo 2 Pastéis Carne + 2 Bebidas</h3>
-              <p class="descricao">2 pastéis de carne + 2 refrigerante coca-cola 250ml</p>
+              <h3>2 Pastéis Carne + 1 Coca-cola Lata 350ml</h3>
+              <p class="descricao">2 pastéis de carne + 1 coca-cola 350ml</p>
               <strong>R$ 21,00</strong>
             </div>
             <img class="foto-produto" src="img/combo3.png">
@@ -209,11 +222,11 @@
             </div>
           </div>
 
-          <div class="item" data-nome="2 pastéis de frango + 2 refrigerante coca-cola 250ml" data-preco="23">
+          <div class="item" data-nome="2 pastéis de frango + 1 Coca-cola lata 350ml" data-preco="22">
             <div class="info">
-              <h3>Combo 2 Pastéis Frango + 2 Bebidas</h3>
-              <p class="descricao">2 pastéis de frango + 2 refrigerante coca-cola 250ml"</p>
-              <strong>R$ 23,00</strong>
+              <h3>2 Pastéis Frango + 1 Coca-cola Lata 350ml</h3>
+              <p class="descricao">2 pastéis de frango + 1 Coca-cola Lata 350ml"</p>
+              <strong>R$ 22,00</strong>
             </div>
             <img class="foto-produto" src="img/combo3.png">
             <div class="qtd vertical">
@@ -223,11 +236,10 @@
             </div>
           </div>
 
-          <div class="item" data-nome="2 pastéis de carne + 2 refrigerante coca-cola 250ml + 1 Batata frita P"
-            data-preco="27">
+          <div class="item" data-nome="2 pastéis de carne + 1 Coca-cola lata 350ml + 1 Batata frita P" data-preco="27">
             <div class="info">
-              <h3>Combo 2 Pastéis Carne + 2 Bebidas + 1 batata P</h3>
-              <p class="descricao">2 pastéis de carne + 2 refrigerante coca-cola 250ml + 1 Batata frita P </p>
+              <h3>2 Pastéis Carne + 1 Coca-cola lata 350ml + 1 batata P</h3>
+              <p class="descricao">2 pastéis de carne + 1 Coca-cola lata 350ml + 1 Batata frita P </p>
               <strong>R$ 27,00</strong>
             </div>
             <img class="foto-produto" src="img/combo2.png">
@@ -238,12 +250,11 @@
             </div>
           </div>
 
-          <div class="item" data-nome="2 pastéis de frango + 2 refrigerante coca-cola 250ml + 1 Batata frita P"
-            data-preco="30">
+          <div class="item" data-nome="2 pastéis de frango + 1 Coca-cola lata 350ml + 1 Batata frita P" data-preco="28">
             <div class="info">
-              <h3>Combo 2 Pastéis Frango + 2 Bebidas + 1 batata P</h3>
-              <p class="descricao">2 pastéis de frango + 2 refrigerante coca-cola 250ml + 1 Batata frita P </p>
-              <strong>R$ 30,00</strong>
+              <h3>2 Pastéis Frango + 1 Coca-cola lata 350ml + 1 batata P</h3>
+              <p class="descricao">2 pastéis de frango + 1 Coca-cola lata 350ml + 1 Batata frita P </p>
+              <strong>R$ 28,00</strong>
             </div>
             <img class="foto-produto" src="img/combo2.png">
             <div class="qtd vertical">
@@ -251,7 +262,7 @@
               <span class="valor">0</span>
               <button onclick="alterarQtd(this, -1)">−</button>
             </div>
-          </div> -->
+          </div>
 
           <section class="grupo-sabor" id="petiscos"></section>
           <h2 class="categoria">Petiscos</h2>
@@ -283,30 +294,30 @@
               <button onclick="alterarQtd(this, -1)">−</button>
             </div>
           </div>
-
+          
           <h2 class="categoria">Bebidas</h2>
 
-          <!--<div class="item" data-nome="Refrigerante Guaraná Antarctica Pet 200ml" data-preco="3" id="bebidas">
+          <div class="item" data-nome="Refrigerante Coca Cola Lata 350ml" data-preco="4.5">
             <div class="info">
-              <h3>Refrigerante Coca-cola 250ml Pet</h3>
-              <p class="descricao">Coca-cola</p>
-              <strong>R$ 3,50</strong>
+              <h3>Refrigerante Coca-Cola Lata 350ml</h3>
+              <p class="descricao">Lata 350ml</p>
+              <strong>R$ 4,50</strong>
             </div>
-            <img class="foto-produto" src="img/cocapet.png">
+            <img class="foto-produto" src="img/cocalata.png">
             <div class="qtd vertical">
               <button onclick="alterarQtd(this, 1)">+</button>
               <span class="valor">0</span>
               <button onclick="alterarQtd(this, -1)">−</button>
             </div>
-          </div>-->
+          </div>
 
-          <div class="item" data-nome="Refrigerante Coca Cola Lata 350ml" data-preco="4.5">
+          <div class="item" data-nome="Refrigerante São Geraldo lata 350ml" data-preco="4.5">
             <div class="info">
-              <h3>Refrigerante Coca Cola Lata 350ml</h3>
-              <p class="descricao">Guaraná</p>
+              <h3>Refrigerante São Geraldo lata 350ml</h3>
+              <p class="descricao">Lata 350ml</p>
               <strong>R$ 4,50</strong>
             </div>
-            <img class="foto-produto" src="img/cocalata.png">
+            <img class="foto-produto" src="img/cajuina-lata.png">
             <div class="qtd vertical">
               <button onclick="alterarQtd(this, 1)">+</button>
               <span class="valor">0</span>
