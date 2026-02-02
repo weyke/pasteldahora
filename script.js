@@ -170,14 +170,21 @@ function finalizarPedido() {
 ========================= */
 function verificarHorario() {
   const agora = new Date();
+  const diaSemana = agora.getDay(); // 0 a 6
   const hora = agora.getHours();
   const minuto = agora.getMinutes();
 
-  // Atendimento das 18h às 22h10
-  const lojaAberta =
+  // Dias permitidos: Quinta(4), Sexta(5), Sábado(6)
+  const diasAbertos = [4, 5, 6];
+  const diaPermitido = diasAbertos.includes(diaSemana);
+
+  // Atendimento das 18h às 22h
+  const horarioPermitido =
     (hora > 18 && hora < 22) ||
     (hora === 18 && minuto >= 0) ||
-    (hora === 22 && minuto <= 1);
+    (hora === 22 && minuto <= 0);
+
+  const lojaAberta = diaPermitido && horarioPermitido;
 
   const loja = document.getElementById('conteudo-loja');
   const fechada = document.getElementById('loja-fechada');
@@ -197,8 +204,7 @@ function verificarHorario() {
     fechada.innerHTML = `
       <h2>⛔ Loja fechada</h2>
       <p>Atendimento das <strong>18h às 22h</strong>.</p>
-      <p>Quinta, Sexta e Sábado</p>
+      <p><strong>Quinta, Sexta e Sábado</strong></p>
     `;
-  } 
-  
+  }
 }
