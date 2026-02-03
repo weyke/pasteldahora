@@ -3,6 +3,8 @@
 ========================= */
 let itens;
 let totalEl;
+let _lightboxTimer = null;
+const LIGHTBOX_TIMEOUT = 2000; // tempo em ms antes de fechar o lightbox automaticamente
 
 /* =========================
    INICIALIZAÇÃO
@@ -14,13 +16,44 @@ document.addEventListener("DOMContentLoaded", () => {
   calcularTotal();
   verificarHorario();
   setInterval(verificarHorario, 60000);
+  // ligar botões de quantidade (suporta novos botões com data-delta)
+  document.querySelectorAll('.qty-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const delta = Number(btn.dataset.delta) || 0;
+      alterarQtd(btn, delta);
+    });
+  });
+
+  const btnFinalizar = document.getElementById('btn-finalizar');
+  if (btnFinalizar) btnFinalizar.addEventListener('click', finalizarPedido);
+
+  const btnLimpar = document.getElementById('btn-limpar');
+  if (btnLimpar) btnLimpar.addEventListener('click', limparCarrinho);
+
+  // Lightbox: abrir imagem ao clicar e fechar após 2 segundos
+  document.querySelectorAll('.foto-produto').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      openLightbox(img.src, img.alt || img.getAttribute('data-nome') || 'Imagem do produto');
+    });
+  });
+
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
 });
 
 /* =========================
    FUNÇÕES UTILITÁRIAS
 ========================= */
 function formatarMoeda(valor) {
-  return `R$ ${valor.toFixed(2).replace('.', ',')}`;
+  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
 }
 
 function mostrarAviso(mensagem) {
@@ -125,6 +158,47 @@ function enviarWhatsApp() {
 
   const telefone = "5585981423131";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
+}
+
+/* =========================
+   LIGHTBOX (ABRIR/FECHAR AUTOMÁTICO)
+========================= */
+function openLightbox(src, alt) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  if (!lb || !img) return;
+
+  // limpar timer anterior
+  if (_lightboxTimer) {
+    clearTimeout(_lightboxTimer);
+    _lightboxTimer = null;
+  }
+
+  img.src = src;
+  img.alt = alt || '';
+  lb.classList.add('show');
+  lb.setAttribute('aria-hidden', 'false');
+
+  // fecha automaticamente após LIGHTBOX_TIMEOUT (2s por padrão)
+  _lightboxTimer = setTimeout(() => {
+    closeLightbox();
+  }, LIGHTBOX_TIMEOUT);
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  if (!lb || !img) return;
+
+  if (_lightboxTimer) {
+    clearTimeout(_lightboxTimer);
+    _lightboxTimer = null;
+  }
+
+  lb.classList.remove('show');
+  lb.setAttribute('aria-hidden', 'true');
+  // pequena espera para transição antes de limpar src
+  setTimeout(() => (img.src = ''), 200);
 }
 
 /* =========================
