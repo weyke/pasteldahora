@@ -47,6 +47,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === 'Escape') closeLightbox();
     });
   }
+
+  // Pastel Customizado
+  setupCustomPastel();
+
+  // Toggle para expandir/contrair "Monte Seu Pastel"
+  const toggleCustomBtn = document.querySelector('.toggle-custom');
+  if (toggleCustomBtn) {
+    toggleCustomBtn.addEventListener('click', () => {
+      const content = document.getElementById('custom-content');
+      if (content) {
+        content.classList.toggle('custom-card-hidden');
+        content.classList.toggle('custom-card-visible');
+      }
+    });
+  }
 });
 
 /* =========================
@@ -99,7 +114,38 @@ function calcularTotal() {
   });
 
   totalEl.innerText = `Total: ${formatarMoeda(total)}`;
+  // atualizar lista visível do carrinho
+  atualizarListaCarrinho();
   return total;
+}
+
+function atualizarListaCarrinho() {
+  const listEl = document.getElementById('cart-list');
+  if (!listEl) return;
+
+  listEl.innerHTML = '';
+  let any = false;
+
+  itens.forEach(item => {
+    const qtd = Number(item.querySelector('.valor').innerText);
+    if (qtd > 0) {
+      any = true;
+      const nome = item.dataset.nome || (item.querySelector('.info h3') ? item.querySelector('.info h3').innerText : 'Item');
+      const preco = Number(item.dataset.preco) || 0;
+      const subtotal = qtd * preco;
+
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="name">${qtd}x ${nome}</span><span class="subtotal">${formatarMoeda(subtotal)}</span>`;
+      listEl.appendChild(li);
+    }
+  });
+
+  if (!any) {
+    const li = document.createElement('li');
+    li.className = 'empty';
+    li.innerText = 'Carrinho vazio';
+    listEl.appendChild(li);
+  }
 }
 
 /* =========================
@@ -282,3 +328,88 @@ function verificarHorario() {
     `;
   }
 }
+
+/* =========================
+   PASTEL CUSTOMIZADO
+========================= */
+function setupCustomPastel() {
+  const toppingCheckboxes = document.querySelectorAll('input[name="custom-topping"]');
+  const totalEl = document.getElementById('custom-total');
+  const addBtn = document.getElementById('custom-add-btn');
+
+  // listeners para adicionais
+  toppingCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', atualizarPrecoCustom);
+  });
+
+  // listener para adicionar
+  if (addBtn) {
+    addBtn.addEventListener('click', adicionarCustomAoCarrinho);
+  }
+
+  // atualizar preço inicial
+  atualizarPrecoCustom();
+}
+
+function atualizarPrecoCustom() {
+  const toppingCheckboxes = document.querySelectorAll('input[name="custom-topping"]:checked');
+  
+  let preco = 6.00; // preço base fixo
+
+  toppingCheckboxes.forEach(checkbox => {
+    preco += Number(checkbox.dataset.preco) || 0;
+  });
+
+  const totalEl = document.getElementById('custom-total');
+  if (totalEl) {
+    totalEl.innerText = formatarMoeda(preco);
+  }
+}
+
+function adicionarCustomAoCarrinho() {
+  const toppingCheckboxesChecked = document.querySelectorAll('input[name="custom-topping"]:checked');
+
+  // construir nome com sabores escolhidos
+  const toppingNames = Array.from(toppingCheckboxesChecked)
+    .map(cb => cb.value)
+    .join(', ');
+
+  const nomePastel = toppingNames 
+    ? `Pastel Customizado (${toppingNames})`
+    : `Pastel Customizado`;
+
+  // calcular preço: base 6.00 + adicionais
+  let preco = 6.00;
+  toppingCheckboxesChecked.forEach(checkbox => {
+    preco += Number(checkbox.dataset.preco) || 0;
+  });
+
+  // criar item fake e adicionar ao carrinho
+  const itemFake = document.createElement('div');
+  itemFake.className = 'item';
+  itemFake.dataset.nome = nomePastel;
+  itemFake.dataset.preco = preco;
+
+  const valorEl = document.createElement('span');
+  valorEl.className = 'valor';
+  valorEl.setAttribute('aria-live', 'polite');
+  valorEl.innerText = '1';
+  itemFake.appendChild(valorEl);
+
+  itemFake.style.display = 'none';
+  document.body.appendChild(itemFake);
+
+  // atualizar referência de itens e total
+  itens = document.querySelectorAll('.item');
+  calcularTotal();
+
+  // limpar checkboxes do customizador
+  const allToppings = document.querySelectorAll('input[name="custom-topping"]');
+  allToppings.forEach(cb => cb.checked = false);
+
+  // resetar preço exibido do customizador
+  atualizarPrecoCustom();
+
+  mostrarAviso(`✅ ${nomePastel} adicionado!`);
+}
+

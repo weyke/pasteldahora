@@ -432,4 +432,258 @@ html {
   border-radius: 8px;
   display: block;
 }
+
+/* =========================
+   PASTEL CUSTOMIZADO (ABA COMPACTA)
+========================= */
+.custom-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.base-info {
+  background: #fff3cd;
+  border-left: 4px solid #ffb703;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.base-info p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Toggle para Monte Seu Pastel */
+.toggle-custom {
+  cursor: pointer;
+  user-select: none;
+  padding: 12px;
+  margin: 0 -15px;
+  background: #f8f9fa;
+  border-radius: 14px 14px 0 0;
+  transition: background 0.3s ease;
+  text-align: center;
+  animation: pulsarSuave 2s ease-in-out infinite;
+}
+
+.toggle-custom:hover {
+  background: #e9ecef;
+  animation: none;
+}
+
+/* Subtítulo de clique */
+.subtitulo-clique {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin: -8px 0 12px 0;
+  font-style: italic;
+}
+
+/* Lista de itens do carrinho (exibida abaixo do total) */
+.cart-list {
+  list-style: none;
+  margin: 8px 0 12px 0;
+  padding: 6px 10px;
+  max-height: 140px;
+  overflow: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.cart-list li {
+  font-size: 13px;
+  color: #333;
+  padding: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px dashed #eee;
+}
+
+.cart-list li.empty {
+  color: #777;
+  text-align: center;
+  border-bottom: none;
+}
+
+.cart-list .name { flex: 1; }
+.cart-list .subtotal { white-space: nowrap; color: #555; }
+
+/* Animação de pulsada suave */
+@keyframes pulsarSuave {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+.custom-card-hidden {
+  display: none;
+}
+
+.custom-card-visible {
+  display: flex;
+}
+
+.custom-base,
+.custom-toppings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-base label,
+.custom-toppings label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.base-options {
+  display: flex;
+  gap: 12px;
+}
+
+.base-options .option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f9f9f9;
+}
+
+.base-options .option input {
+  cursor: pointer;
+  accent-color: #25D366;
+}
+
+.base-options .option input:checked ~ span:first-of-type {
+  font-weight: bold;
+  color: #25D366;
+}
+
+.base-options .option:has(input:checked) {
+  border-color: #25D366;
+  background: #e8f5e9;
+}
+
+.option span:first-of-type {
+  font-size: 13px;
+}
+
+.option .price {
+  font-size: 12px;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.toppings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.topping {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 12px;
+}
+
+.topping:hover {
+  background: #f0f0f0;
+}
+
+.topping input {
+  cursor: pointer;
+  accent-color: #25D366;
+}
+
+.topping input:checked ~ span:first-of-type {
+  font-weight: bold;
+  color: #25D366;
+}
+
+.topping .price {
+  margin-left: auto;
+  font-size: 11px;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.custom-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  gap: 12px;
+}
+
+.price-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.price-display strong {
+  font-size: 16px;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.btn-add-custom {
+  padding: 8px 16px;
+  background: #25D366;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-add-custom:hover {
+  background: #20b856;
+}
+
+.btn-add-custom:active {
+  transform: scale(0.95);
+}
+.clique-aqui {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  margin-top: -6px;
+}
 }
