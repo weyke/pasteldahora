@@ -5,6 +5,7 @@ let itens;
 let totalEl;
 let _lightboxTimer = null;
 const LIGHTBOX_TIMEOUT = 2000; // tempo em ms antes de fechar o lightbox automaticamente
+let customSectionLocked = false; // controla se a seção customizada está bloqueada (aberta)
 
 /* =========================
    INICIALIZAÇÃO
@@ -57,8 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleCustomBtn.addEventListener('click', () => {
       const content = document.getElementById('custom-content');
       if (content) {
-        content.classList.toggle('custom-card-hidden');
-        content.classList.toggle('custom-card-visible');
+        // Se a seção está bloqueada (cliente já clicou), não permite fechar
+        if (customSectionLocked) {
+          return;
+        }
+        // Senão, abre a seção e bloqueia
+        content.classList.remove('custom-card-hidden');
+        content.classList.add('custom-card-visible');
+        customSectionLocked = true;
       }
     });
   }
@@ -369,6 +376,12 @@ function atualizarPrecoCustom() {
 function adicionarCustomAoCarrinho() {
   const toppingCheckboxesChecked = document.querySelectorAll('input[name="custom-topping"]:checked');
 
+  // validação: exigir pelo menos 1 topping selecionado
+  if (toppingCheckboxesChecked.length === 0) {
+    mostrarAviso('❌ Selecione pelo menos 1 sabor para montar seu pastel!');
+    return;
+  }
+
   // construir nome com sabores escolhidos
   const toppingNames = Array.from(toppingCheckboxesChecked)
     .map(cb => cb.value)
@@ -409,6 +422,14 @@ function adicionarCustomAoCarrinho() {
 
   // resetar preço exibido do customizador
   atualizarPrecoCustom();
+
+  // fechar a seção customizada e desbloquear
+  const customContent = document.getElementById('custom-content');
+  if (customContent) {
+    customContent.classList.add('custom-card-hidden');
+    customContent.classList.remove('custom-card-visible');
+    customSectionLocked = false;
+  }
 
   mostrarAviso(`✅ ${nomePastel} adicionado!`);
 }
