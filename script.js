@@ -78,16 +78,30 @@ function formatarMoeda(valor) {
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
 }
 
-function mostrarAviso(mensagem) {
+function mostrarAviso(mensagem, tipo = 'info') {
   const aviso = document.getElementById('aviso');
   if (!aviso) return;
 
   aviso.innerText = mensagem;
+  // resetar estado visual
+  aviso.classList.remove('mostrar');
+  aviso.style.backgroundColor = '';
+
+  // definir cor de fundo conforme tipo
+  if (tipo === 'success') {
+    aviso.style.backgroundColor = '#2ecc71'; // verde
+  } else if (tipo === 'error') {
+    aviso.style.backgroundColor = '#e74c3c'; // vermelho
+  } else {
+    aviso.style.backgroundColor = '';
+  }
+
   aviso.classList.add('mostrar');
 
   clearTimeout(aviso.timer);
   aviso.timer = setTimeout(() => {
     aviso.classList.remove('mostrar');
+    aviso.style.backgroundColor = '';
   }, 3000);
 }
 
@@ -164,13 +178,13 @@ function enviarWhatsApp() {
   const pagamentoEl = document.querySelector('input[name="pagamento"]:checked');
 
   if (!nome || !endereco) {
-    mostrarAviso("Informe seu nome e endereço.");
+    mostrarAviso("Informe seu nome e endereço.", 'error');
     irParaCliente();
     return;
   }
 
   if (!pagamentoEl) {
-    mostrarAviso("Selecione a forma de pagamento.");
+    mostrarAviso("Selecione a forma de pagamento.", 'error');
     irParaCliente();
     return;
   }
@@ -202,7 +216,7 @@ function enviarWhatsApp() {
   });
 
   if (!temItem) {
-    mostrarAviso("Selecione pelo menos um item do cardápio.");
+    mostrarAviso("Selecione pelo menos um item do cardápio.", 'error');
     return;
   }
 
@@ -307,8 +321,8 @@ function verificarHorario() {
 
   // Atendimento das 18h às 22h
   const horarioPermitido =
-    (hora > 17 && hora < 22) ||
-    (hora === 17 && minuto >= 0) ||
+    (hora > 10 && hora < 22) ||
+    (hora === 10 && minuto >= 0) ||
     (hora === 22 && minuto <= 0);
 
   const lojaAberta = diaPermitido && horarioPermitido;
@@ -378,7 +392,7 @@ function adicionarCustomAoCarrinho() {
 
   // validação: exigir pelo menos 1 topping selecionado
   if (toppingCheckboxesChecked.length === 0) {
-    mostrarAviso('❌ Selecione pelo menos 1 sabor para montar seu pastel!');
+    mostrarAviso('❌ Selecione pelo menos 1 sabor para montar seu pastel!', 'error');
     return;
   }
 
@@ -431,6 +445,6 @@ function adicionarCustomAoCarrinho() {
     customSectionLocked = false;
   }
 
-  mostrarAviso(`✅ ${nomePastel} adicionado!`);
+  mostrarAviso(`✅ ${nomePastel} adicionado!`, 'success');
 }
 
