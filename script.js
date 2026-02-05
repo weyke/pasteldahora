@@ -321,8 +321,8 @@ function verificarHorario() {
 
   // Atendimento das 18h às 22h
   const horarioPermitido =
-    (hora > 10 && hora < 22) ||
-    (hora === 10 && minuto >= 0) ||
+    (hora > 17 && hora < 22) ||
+    (hora === 17 && minuto >= 0) ||
     (hora === 22 && minuto <= 0);
 
   const lojaAberta = diaPermitido && horarioPermitido;
