@@ -223,7 +223,7 @@ function enviarWhatsApp() {
   mensagem += `%0A━━━━━━━━━━━━━━%0A`;
   mensagem += `💰 *Total:* ${formatarMoeda(total)}`;
 
-  const telefone = "5585981423131";
+  const telefone = "5585920005940";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
 }
 
@@ -445,6 +445,6 @@ function adicionarCustomAoCarrinho() {
     customSectionLocked = false;
   }
 
-  mostrarAviso(`✅ ${nomePastel} adicionado!`, 'success');
+  mostrarAviso(`Pastel incluído, Finalize o pedido para concluir.`, 'success');
 }
 
