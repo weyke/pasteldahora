@@ -315,15 +315,15 @@ function verificarHorario() {
   const hora = agora.getHours();
   const minuto = agora.getMinutes();
 
-  // Dias permitidos: Quinta(4), Sexta(5), Sábado(6)
-  const diasAbertos = [4, 5, 6, 7];
+  // Dias permitidos: Domingo(0), Quinta(4), Sexta(5), Sábado(6)
+  const diasAbertos = [0, 4, 5, 6];
   const diaPermitido = diasAbertos.includes(diaSemana);
 
   // Atendimento das 18h às 22h
   const horarioPermitido =
     (hora > 17 && hora < 22) ||
     (hora === 17 && minuto >= 0) ||
-    (hora === 22 && minuto <= 0);
+    (hora === 22 && minuto === 0);
 
   const lojaAberta = diaPermitido && horarioPermitido;
 
@@ -345,10 +345,11 @@ function verificarHorario() {
     fechada.innerHTML = `
       <h2>⛔ Loja fechada</h2>
       <p>Atendimento das <strong>18h às 22h</strong>.</p>
-      <p><strong>Quinta, Sexta e Sábado</strong></p>
+      <p><strong>Quinta, Sexta, Sábado e Domingo</strong></p>
     `;
   }
 }
+
 
 /* =========================
    PASTEL CUSTOMIZADO
