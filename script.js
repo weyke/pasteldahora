@@ -328,11 +328,15 @@ function verificarHorario() {
   const lojaAberta = diaPermitido && horarioPermitido;
 
   const fechada = document.getElementById('loja-fechada');
+  const avisoHorario = document.getElementById('aviso-horario');
   const botaoFinalizar = document.querySelector('.footer button');
 
   if (!fechada) return;
 
-  fechada.style.display = lojaAberta ? 'none' : 'block';
+  // Mostrar/Esconder aviso de horário
+  if (avisoHorario) {
+    avisoHorario.style.display = lojaAberta ? 'none' : 'block';
+  }
 
   if (botaoFinalizar) {
     botaoFinalizar.disabled = !lojaAberta;
@@ -340,19 +344,45 @@ function verificarHorario() {
   }
 
   if (!lojaAberta) {
+    fechada.classList.add('show');
     fechada.innerHTML = `
-      <div class="icon-fechada">🚫</div>
-      <h2>Loja Fechada</h2>
-      <div class="horario-info">
-        <div class="horario-titulo">Horário de Funcionamento</div>
-        <div class="horario-detalhe">18h às 22h</div>
-        <div class="dias-funcionamento">
-          📅 Quinta, Sexta, Sábado e Domingo
+      <div class="modal-content">
+        <div class="icon-fechada">🚫</div>
+        <h2>Loja Fechada</h2>
+        <div class="subtitulo">Estamos preparando delícias para você</div>
+        
+        <div class="horario-info">
+          <div class="horario-titulo">⏰ Horário de Atendimento</div>
+          <div class="horario-detalhe">18h às 22h</div>
+          <div class="dias-funcionamento">
+            Quinta · Sexta · Sábado · Domingo
+          </div>
         </div>
-      </div>
-      <div class="mensagem-volta">
+
+        <div class="mensagem-volta">
+          Volte em breve! Você vai amar nossos pastéis.
+        </div>
+
+        <button class="btn-fechar-modal">Voltarei em Breve</button>
       </div>
     `;
+
+    // Adicionar event listener ao botão de fechar
+    const btnFechar = document.querySelector('.btn-fechar-modal');
+    if (btnFechar) {
+      btnFechar.addEventListener('click', () => {
+        fechada.classList.remove('show');
+      });
+    }
+
+    // Fechar ao clicar fora do modal
+    fechada.addEventListener('click', (e) => {
+      if (e.target === fechada) {
+        fechada.classList.remove('show');
+      }
+    });
+  } else {
+    fechada.classList.remove('show');
   }
 }
 

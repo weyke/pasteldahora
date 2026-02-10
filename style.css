@@ -330,6 +330,112 @@ h1 {
   pointer-events: auto;
 }
 
+/* =========================
+   AVISO HORÁRIO DE FUNCIONAMENTO
+========================= */
+.aviso-horario {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  padding: 16px 20px;
+  margin: 12px auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+  animation: slideInDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.aviso-horario::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+.aviso-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.aviso-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.aviso-texto {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aviso-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.aviso-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.aviso-horario-info {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.aviso-horario-info strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.aviso-dias-info {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .aviso-horario {
+    margin: 10px 8px;
+    padding: 14px 12px;
+  }
+
+  .aviso-conteudo {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .aviso-icon {
+    font-size: 24px;
+  }
+
+  .aviso-titulo {
+    font-size: 14px;
+  }
+
+  .aviso-detalhes {
+    gap: 3px;
+    font-size: 11px;
+  }
+}
+
 .menu-topo {
   position: sticky;
   top: 0;
@@ -695,107 +801,150 @@ html {
   margin-top: -6px;
 }
 /* =========================
-   LOJA FECHADA
+   LOJA FECHADA - MODAL MINIMALISTA
 ========================= */
 #loja-fechada {
-  background: linear-gradient(135deg, #ec2727 100%);
-  border-radius: 16px;
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 15px 40px rgba(255, 152, 0, 0.3);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 10001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  padding: 20px;
+}
+
+#loja-fechada.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#loja-fechada .modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   text-align: center;
+  animation: modalSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
-  overflow: hidden;
-  animation: slideInDown 0.6s ease;
 }
 
-#loja-fechada::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
-  pointer-events: none;
-}
-
-#loja-fechada>* {
-  position: relative;
-  z-index: 1;
-}
-
-#loja-fechada h2 {
-  font-size: 32px;
-  margin: 0 0 12px 0;
-  color: #ffffff;
-  font-weight: 700;
-  animation: bounce 1s ease-in-out infinite;
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 #loja-fechada .icon-fechada {
-  font-size: 60px;
-  margin-bottom: 15px;
+  font-size: 80px;
+  margin-bottom: 20px;
   display: inline-block;
   animation: pulse 2s ease-in-out infinite;
 }
 
-#loja-fechada .horario-info {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  border-radius: 12px;
-  margin: 15px 0;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+#loja-fechada h2 {
+  font-size: 28px;
+  margin: 0 0 10px 0;
+  color: #333;
+  font-weight: 700;
 }
 
-#loja-fechada .horario-info p {
-  margin: 8px 0;
-  color: #ffffff;
-  font-size: 16px;
+#loja-fechada .subtitulo {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 30px;
   font-weight: 500;
 }
 
+#loja-fechada .horario-info {
+  background: linear-gradient(135deg, #fff8f0 0%, #fffbf7 100%);
+  padding: 25px;
+  border-radius: 14px;
+  border: 2px solid #ff9800;
+  margin: 25px 0;
+}
+
 #loja-fechada .horario-titulo {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  color: #ff9800;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 20px;
-  margin-bottom: 8px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 #loja-fechada .horario-detalhe {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
-  color: #ffd700;
-  margin: 8px 0;
+  color: #ff9800;
+  margin-bottom: 15px;
 }
 
 #loja-fechada .dias-funcionamento {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 12px;
-  line-height: 1.6;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.8;
 }
 
 #loja-fechada .mensagem-volta {
   margin-top: 20px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #777;
   font-style: italic;
+  line-height: 1.6;
 }
 
-@keyframes slideInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+#loja-fechada .btn-fechar-modal {
+  margin-top: 30px;
+  padding: 12px 32px;
+  background: #ff9800;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+}
+
+#loja-fechada .btn-fechar-modal:hover {
+  background: #fb8500;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+}
+
+#loja-fechada .btn-fechar-modal:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  #loja-fechada .modal-content {
+    padding: 40px 25px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  #loja-fechada h2 {
+    font-size: 24px;
+  }
+
+  #loja-fechada .icon-fechada {
+    font-size: 64px;
+  }
+
+  #loja-fechada .horario-detalhe {
+    font-size: 28px;
   }
 }
 
