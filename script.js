@@ -446,6 +446,6 @@ function adicionarCustomAoCarrinho() {
     customSectionLocked = false;
   }
 
-  mostrarAviso(`Pastel incluído, Finalize o pedido para concluir.`, 'success');
+  mostrarAviso(`Pastel incluído, Finalize o pedido.`, 'success');
 }
 
