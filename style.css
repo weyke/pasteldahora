@@ -694,3 +694,152 @@ html {
   color: #888;
   margin-top: -6px;
 }
+/* =========================
+   LOJA FECHADA
+========================= */
+#loja-fechada {
+  background: linear-gradient(135deg, #ec2727 100%);
+  border-radius: 16px;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 15px 40px rgba(255, 152, 0, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: slideInDown 0.6s ease;
+}
+
+#loja-fechada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+#loja-fechada>* {
+  position: relative;
+  z-index: 1;
+}
+
+#loja-fechada h2 {
+  font-size: 32px;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-weight: 700;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+#loja-fechada .icon-fechada {
+  font-size: 60px;
+  margin-bottom: 15px;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+#loja-fechada .horario-info {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#loja-fechada .horario-info p {
+  margin: 8px 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#loja-fechada .horario-titulo {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+#loja-fechada .horario-detalhe {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffd700;
+  margin: 8px 0;
+}
+
+#loja-fechada .dias-funcionamento {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+#loja-fechada .mensagem-volta {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  #loja-fechada {
+    padding: 30px 15px;
+    margin: 15px 8px;
+  }
+
+  #loja-fechada h2 {
+    font-size: 26px;
+  }
+
+  #loja-fechada .icon-fechada {
+    font-size: 48px;
+  }
+
+  #loja-fechada .horario-detalhe {
+    font-size: 20px;
+  }
+}

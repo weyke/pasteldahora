@@ -327,13 +327,11 @@ function verificarHorario() {
 
   const lojaAberta = diaPermitido && horarioPermitido;
 
-  const loja = document.getElementById('conteudo-loja');
   const fechada = document.getElementById('loja-fechada');
   const botaoFinalizar = document.querySelector('.footer button');
 
-  if (!loja || !fechada) return;
+  if (!fechada) return;
 
-  loja.style.display = lojaAberta ? 'block' : 'none';
   fechada.style.display = lojaAberta ? 'none' : 'block';
 
   if (botaoFinalizar) {
@@ -343,9 +341,17 @@ function verificarHorario() {
 
   if (!lojaAberta) {
     fechada.innerHTML = `
-      <h2>⛔ Loja fechada</h2>
-      <p>Atendimento das <strong>18h às 22h</strong>.</p>
-      <p><strong>Quinta, Sexta, Sábado e Domingo</strong></p>
+      <div class="icon-fechada">🚫</div>
+      <h2>Loja Fechada</h2>
+      <div class="horario-info">
+        <div class="horario-titulo">Horário de Funcionamento</div>
+        <div class="horario-detalhe">18h às 22h</div>
+        <div class="dias-funcionamento">
+          📅 Quinta, Sexta, Sábado e Domingo
+        </div>
+      </div>
+      <div class="mensagem-volta">
+      </div>
     `;
   }
 }
