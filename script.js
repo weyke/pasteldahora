@@ -412,7 +412,7 @@ function setupCustomPastel() {
 function atualizarPrecoCustom() {
   const toppingCheckboxes = document.querySelectorAll('input[name="custom-topping"]:checked');
   
-  let preco = 6.00; // preço base fixo
+  let preco = 5.00; // preço base fixo
 
   toppingCheckboxes.forEach(checkbox => {
     preco += Number(checkbox.dataset.preco) || 0;
@@ -442,8 +442,8 @@ function adicionarCustomAoCarrinho() {
     ? `Pastel Customizado (${toppingNames})`
     : `Pastel Customizado`;
 
-  // calcular preço: base 6.00 + adicionais
-  let preco = 6.00;
+  // calcular preço: base 5.00 + adicionais
+  let preco = 5.00;
   toppingCheckboxesChecked.forEach(checkbox => {
     preco += Number(checkbox.dataset.preco) || 0;
   });

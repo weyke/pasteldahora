@@ -53,16 +53,16 @@
             <label><strong>Escolha seus sabores:</strong></label>
 
             <div class="base-info">
-              <p><strong>Massa R$ 6,00</strong></p>
+              <p><strong>Massa R$ 5,00</strong></p>
             </div>
             <div class="toppings-grid">
               <label class="topping">
-                <input type="checkbox" name="custom-topping" value="frango" data-preco="3.00">
-                <span>Frango</span> <span class="price">+R$ 3,00</span>
+                <input type="checkbox" name="custom-topping" value="frango" data-preco="4.00">
+                <span>Frango</span> <span class="price">+R$ 4,00</span>
               </label>
               <label class="topping">
-                <input type="checkbox" name="custom-topping" value="carne" data-preco="3.00">
-                <span>Carne</span> <span class="price">+R$ 3,00</span>
+                <input type="checkbox" name="custom-topping" value="carne" data-preco="4.00">
+                <span>Carne</span> <span class="price">+R$ 4,00</span>
               </label>
               <label class="topping">
                 <input type="checkbox" name="custom-topping" value="bacon" data-preco="2.50">
@@ -85,16 +85,8 @@
                 <span>Presunto</span> <span class="price">+R$ 2,50</span>
               </label>
               <label class="topping">
-                <input type="checkbox" name="custom-topping" value="calabresa" data-preco="3.00">
-                <span>Calabresa</span> <span class="price">+R$ 3,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="milho" data-preco="1.00">
-                <span>Milho</span> <span class="price">+R$ 1,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="ovo" data-preco="1.00">
-                <span>Ovo</span> <span class="price">+R$ 1,00</span>
+                <input type="checkbox" name="custom-topping" value="calabresa" data-preco="2.50">
+                <span>Calabresa</span> <span class="price">+R$ 2,50</span>
               </label>
             </div>
           </div>
@@ -102,7 +94,7 @@
           <div class="custom-summary">
             <div class="price-display">
               <span>Total:</span>
-              <strong id="custom-total">R$ 6,00</strong>
+              <strong id="custom-total">R$ 5,00</strong>
             </div>
             <button id="custom-add-btn" class="btn-add-custom">Adicionar</button>
           </div>
@@ -112,10 +104,41 @@
     <section class="grupo-sabor">
       <h2 class="promo">Especial do Dia</h2>
 
+
+      <div class="item" data-nome="Pastel Frango com Requeijão" data-preco="10">
+        <div class="info">
+          <h3>Pastel Frango com Regueijão</h3>
+          <p class="descricao">Pastel recheado com frango desfiado e requeijão.
+          </p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-requeijao.png" alt="Pastel Frango com Regueijão">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Pastel Carne com Requeijão" data-preco="10">
+        <div class="info">
+          <h3>Pastel Carne com Regueijão</h3>
+          <p class="descricao">Pastel recheado com carne e requeijão.
+          </p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/carne-requeijao.png" alt="Pastel Carne com Regueijão">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
       <div class="item" data-nome="Pastel X-tudo " data-preco="12.5">
         <div class="info">
           <h3>Pastel X-tudo</h3>
-          <p class="descricao">Pastel recheado com carne moída, frango desfiado, presunto, mussarela, calabresa e bacon.
+          <p class="descricao">Pastel recheado com carne moída, frango, presunto, mussarela, calabresa e bacon.
           </p>
           <strong>R$ 12,50</strong>
         </div>
@@ -142,16 +165,14 @@
         </div>
       </div>
 
-      <div class="item" data-nome="Pastel frango com queijo e bacon + Guaraná Kuat Garrafa 250ml " data-preco="15">
+      <div class="item" data-nome="Pastel Frango Requeijão e bacon " data-preco="12">
         <div class="info">
-          <h3>Pastel de frango com queijo e bacon + Guaraná Kuat 250 ml.</h3>
-          <p class="descricao">Pastel recheado Pastel Frango com queijo mussarela e bacon. + refri 250ml
+          <h3>Pastel Frango com Requeijão e bacon</h3>
+          <p class="descricao">Pastel recheado com frango desfiado Requeijão e bacon.
           </p>
-          <p class="descricao">
-          </p>
-          <strong>R$ 15,00</strong>
+          <strong>R$ 12,00</strong>
         </div>
-        <img class="foto-produto" src="img/promosao.png" alt="Pastel frango com queijo e bacon">
+        <img class="foto-produto" src="img/frango-requeijao-bacon.png" alt="Pastel Frango Requeijão bacon">
         <div class="qtd vertical">
           <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
           <span class="valor" aria-live="polite">0</span>
@@ -190,13 +211,13 @@
           </div>
         </div>
 
-        <div class="item" data-nome="Frango com Queijo mussarela e Bacon" data-preco="12.5">
+        <div class="item" data-nome="Frango e Queijo Mussarela e bacon" data-preco="12.5">
           <div class="info">
-            <h3>Frango com Queijo mussarela e Bacon</h3>
-            <p class="descricao">Massa crocante, com recheio de frango com queijo e bacon</p>
+            <h3>Frango e Queijo Mussarela e bacon</h3>
+            <p class="descricao">Massa crocante, com recheio de frango com queijo Mussarela e bacon</p>
             <strong>R$ 12,50</strong>
           </div>
-          <img class="foto-produto" src="img/frango-bacon.png" alt="Pastel frango com queijo e bacon">
+          <img class="foto-produto" src="img/frango-quei-bacon.png" alt="Pastel Frango e Queijo Mussarela e bacon">
           <div class="qtd vertical">
             <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
             <span class="valor" aria-live="polite">0</span>
@@ -259,6 +280,20 @@
               <h3>Carne Moída com Queijo Mussarela</h3>
               <p class="descricao">Massa crocante, com recheio de carne moída com queijo mussarela</p>
               <strong>R$ 11,00</strong>
+            </div>
+            <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo mussarela">
+            <div class="qtd vertical">
+              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+              <span class="valor" aria-live="polite">0</span>
+              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+            </div>
+          </div>
+
+          <div class="item" data-nome="Carne Moída com Queijo Mussarela e requeijão" data-preco="12">
+            <div class="info">
+              <h3>Carne Moída com Queijo Mussarela e requeijão</h3>
+              <p class="descricao">Massa crocante, com recheio de carne moída com queijo mussarela</p>
+              <strong>R$ 12,00</strong>
             </div>
             <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo mussarela">
             <div class="qtd vertical">
@@ -375,7 +410,21 @@
           <h2 class="categoria">Bebidas</h2>
           <section class="grupo-sabor" id="bebidas"></section>
 
-          <div class="item" data-nome="Refrigerante Coca Cola Lata 350ml" data-preco="4.5">
+          <div class="item" data-nome="Refrigerante Coca-Cola 250ml pet" data-preco="3.5">
+            <div class="info">
+              <h3>Refrigerante Coca-Cola 250ml pet</h3>
+              <p class="descricao">Pet 250ml</p>
+              <strong>R$ 3,50</strong>
+            </div>
+            <img class="foto-produto" src="img/coca-pet250.png" alt="Refrigerante Coca-Cola 250ml pet">
+            <div class="qtd vertical">
+              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+              <span class="valor" aria-live="polite">0</span>
+              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+            </div>
+          </div>
+
+            <!--<div class="item" data-nome="Refrigerante Coca Cola Lata 350ml" data-preco="4.5">
             <div class="info">
               <h3>Refrigerante Coca-Cola Lata 350ml</h3>
               <p class="descricao">Lata 350ml</p>
@@ -401,7 +450,7 @@
               <span class="valor">0</span>
               <button onclick="alterarQtd(this, -1)">−</button>
             </div>
-          </div>
+          </div>-->
 
           <div class="cliente" id="cliente">
             <p><strong>Endereço de Entrega</strong></p>
