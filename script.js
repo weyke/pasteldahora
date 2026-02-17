@@ -316,13 +316,13 @@ function verificarHorario() {
   const minuto = agora.getMinutes();
 
   // Dias permitidos: Domingo(0), Quinta(4), Sexta(5), Sábado(6)
-  const diasAbertos = [0, 2, 4, 5, 6];
+  const diasAbertos = [0, 4, 5, 6];
   const diaPermitido = diasAbertos.includes(diaSemana);
 
   // Atendimento das 18h às 22h
   const horarioPermitido =
-    (hora > 16 && hora < 22) ||
-    (hora === 16 && minuto >= 0) ||
+    (hora > 17 && hora < 22) ||
+    (hora === 17 && minuto >= 0) ||
     (hora === 22 && minuto === 0);
 
   const lojaAberta = diaPermitido && horarioPermitido;
