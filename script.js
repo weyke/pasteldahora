@@ -189,14 +189,14 @@ function enviarWhatsApp() {
     return;
   }
 
-  let mensagem = `🍽️ *NOVO PEDIDO* 🍽️%0A`;
+  let mensagem = `🍟 *NOVO PEDIDO* 🍟%0A`;
   mensagem += `━━━━━━━━━━━━━━%0A%0A`;
-  mensagem += `👤 *Cliente*%0A`;
+  mensagem += `🙂 *Cliente*%0A`;
   mensagem += `Nome: ${nome}%0A`;
   mensagem += `Endereço: ${endereco}%0A%0A`;
-  mensagem += `💳 *Pagamento*%0A`;
+  mensagem += `💲 *Pagamento*%0A`;
   mensagem += `${pagamentoEl.value}%0A%0A`;
-  mensagem += `🛒 *Itens do pedido*%0A`;
+  mensagem += `🧾 *Itens do pedido*%0A`;
 
   let temItem = false;
   let total = 0;
@@ -221,7 +221,7 @@ function enviarWhatsApp() {
   }
 
   mensagem += `%0A━━━━━━━━━━━━━━%0A`;
-  mensagem += `💰 *Total:* ${formatarMoeda(total)}`;
+  mensagem += `💵 *Total:* ${formatarMoeda(total)}`;
 
   const telefone = "5585920005940";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
