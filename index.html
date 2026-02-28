@@ -135,7 +135,39 @@
           <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
         </div>
       </div>
-      
+
+      <div class="item" data-nome="Pastel 3und chocolate " data-preco="10">
+        <div class="info">
+          <h3>Mini Pastel Chocolate com 3 unidades</h3>
+          <p class="descricao">mini pastéis vem com massa fininha, super crocante e recheio chocolate.
+          </p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/chocolate.png" alt="Pastel de Chocolate">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
+      <div class="item" data-nome="Pastel 3und doce de leite " data-preco="10">
+        <div class="info">
+          <h3>Mini Pastel Doce de Leite com 3 unidades</h3>
+          <p class="descricao">mini pastéis vem com massa fininha, super crocante e recheio doce de leite.
+          </p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/leite.png" alt="Pastel de Doce de Leite">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
+
+
       <section class="grupo-sabor" id="frango">
         <h2 class="categoria">Pastéis de Frango</h2>
 
@@ -322,7 +354,7 @@
           <h2 class="categoria">Combos</h2>
 
 
-              <!--<div class="item" data-nome="2 pastéis de frango + 1 são Geraldo 350ml" data-preco="22">
+          <div class="item" data-nome="2 pastéis de frango + 1 são Geraldo 350ml" data-preco="22">
             <div class="info">
               <h3>2 Pastéis Frango + 1 São Geraldo 350ml</h3>
               <p class="descricao">2 pastéis de frango + 1 são Geraldo 350ml"</p>
@@ -362,9 +394,9 @@
               <span class="valor" aria-live="polite">0</span>
               <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
             </div>
-          </div>-->
-          
-          <div class="item" data-nome="2 Pastéis Frango + 2 Coca-cola 250ml + 1 batata G" data-preco="33.50">
+          </div>
+
+          <!--<div class="item" data-nome="2 Pastéis Frango + 2 Coca-cola 250ml + 1 batata G" data-preco="33.50">
             <div class="info">
               <h3>2 Pastéis Frango + 2 Coca-cola 250ml + 1 batata G</h3>
               <p class="descricao">2 pastéis de frango + 1 São Geraldo 350ml + 1 Batata frita G </p>
@@ -378,13 +410,46 @@
             </div>
           </div>
 
-                    <div class="item" data-nome="2 Pastéis Carne + 2 Coca-cola 250ml + 1 batata G" data-preco="33.50">
+          <div class="item" data-nome="2 Pastéis Carne + 2 Coca-cola 250ml + 1 batata G" data-preco="33.50">
             <div class="info">
               <h3>2 Pastéis Carne + 2 Coca-cola 250ml + 1 batata G</h3>
               <p class="descricao">2 pastéis de carne + 1 São Geraldo 350ml + 1 Batata frita G </p>
               <strong>R$ 33,50</strong>
             </div>
             <img class="foto-produto" src="img/combo-coca.png" alt="2 Pastéis Carne + 2 Coca-cola 250ml + 1 batata G">
+            <div class="qtd vertical">
+              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+              <span class="valor" aria-live="polite">0</span>
+              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+            </div>
+          </div>-->
+
+          <section class="grupo-sabor" id="combos"></section>
+          <h2 class="categoria">Pastéis doce</h2>
+
+          <div class="item" data-nome="Pastel Chocolate" data-preco="10">
+            <div class="info">
+              <h3>Pastel Chocolate</h3>
+              <p class="descricao">Super crocante e recheio chocolate.
+              </p>
+              <strong>R$ 10,00</strong>
+            </div>
+            <img class="foto-produto" src="img/chocolate-g.png" alt="Pastel de Chocolate">
+            <div class="qtd vertical">
+              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+              <span class="valor" aria-live="polite">0</span>
+              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+            </div>
+          </div>
+
+          <div class="item" data-nome="Pastel Doce de Leite" data-preco="10">
+            <div class="info">
+              <h3>Pastel Doce de Leite</h3>
+              <p class="descricao">Super crocante e recheio doce de leite.
+              </p>
+              <strong>R$ 10,00</strong>
+            </div>
+            <img class="foto-produto" src="img/docedeleite.png" alt="Pastel de Doce de Leite">
             <div class="qtd vertical">
               <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
               <span class="valor" aria-live="polite">0</span>
@@ -466,7 +531,7 @@
               <span class="valor" aria-live="polite">0</span>
               <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
             </div>
-          </div>
+          </div>-->
 
           <div class="item" data-nome="Refrigerante São Geraldo lata 350ml" data-preco="4.5">
             <div class="info">
@@ -480,7 +545,7 @@
               <span class="valor">0</span>
               <button onclick="alterarQtd(this, -1)">−</button>
             </div>
-          </div>-->
+          </div>
 
           <div class="cliente" id="cliente">
             <p><strong>Endereço de Entrega</strong></p>
