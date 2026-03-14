@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnLimpar = document.getElementById('btn-limpar');
   if (btnLimpar) btnLimpar.addEventListener('click', limparCarrinho);
 
-  // Lightbox: abrir imagem ao clicar e fechar após 2 segundos
   document.querySelectorAll('.foto-produto').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', (e) => {
@@ -316,7 +315,7 @@ function verificarHorario() {
   const minuto = agora.getMinutes();
 
   // Dias permitidos: Domingo(0), Quinta(4), Sexta(5), Sábado(6)
-  const diasAbertos = [ 4, 5, 6];
+  const diasAbertos = [ 4, 5, ];
   const diaPermitido = diasAbertos.includes(diaSemana);
 
   // Atendimento das 18h às 22h
