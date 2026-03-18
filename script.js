@@ -315,7 +315,7 @@ function verificarHorario() {
   const minuto = agora.getMinutes();
 
   // Dias permitidos: Domingo(0), Quinta(4), Sexta(5), Sábado(6)
-  const diasAbertos = [ 4, 5, ];
+  const diasAbertos = [ 0, 4, 5, 6 ];
   const diaPermitido = diasAbertos.includes(diaSemana);
 
   // Atendimento das 18h às 22h
@@ -354,7 +354,7 @@ function verificarHorario() {
           <div class="horario-titulo">⏰ Horário de Atendimento</div>
           <div class="horario-detalhe">18h às 22h</div>
           <div class="dias-funcionamento">
-            Quinta · Sexta · Sábado
+            Quinta · Sexta · Sábado -  Domingo
           </div>
         </div>
 
