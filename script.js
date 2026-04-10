@@ -222,7 +222,7 @@ function enviarWhatsApp() {
   mensagem += `%0A━━━━━━━━━━━━━━%0A`;
   mensagem += `💵 *Total:* ${formatarMoeda(total)}`;
 
-  const telefone = "5585920005940";
+  const telefone = "5585981423131";
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
 }
 
