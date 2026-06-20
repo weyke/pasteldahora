@@ -133,6 +133,23 @@
         </div>
       </div>
 
+      <div class="item" data-nome="Frango e Queijo coalho" data-preco="12">
+        <div class="info">
+          <h3>Frango e Queijo coalho calabresa e cheddar</h3>
+          <p class="descricao">Massa crocante, com recheio de frango com queijo coalho cala
+            e cheddar
+          </p>
+          <strong>R$ 12,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-che
+        .png" alt="Pastel frango e queijo coalho">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
       <div class="item" data-nome="Frango e Queijo coalho e calabresa" data-preco="12">
         <div class="info">
           <h3>Frango e Queijo coalho e calabresa</h3>
@@ -149,7 +166,7 @@
 
 
 
-      <div class="item" data-nome="Pastel X-tudo " data-preco="12,50">
+      <!--<div class="item" data-nome="Pastel X-tudo " data-preco="12,50">
         <div class="info">
           <h3>X-TUDO</h3>
           <p class="descricao">Pastel recheado com carne moída, frango, presunto, coalho, calabresa e bacon.
@@ -162,7 +179,7 @@
           <span class="valor" aria-live="polite">0</span>
           <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
         </div>
-      </div>
+      </div>-->
 
       <div class="item" data-nome="Pastel Frango Cheddar bacon " data-preco="12">
         <div class="info">
@@ -213,7 +230,7 @@
           </div>
         </div>
 
-        <div class="item" data-nome="Pastel Frango com Requeijão" data-preco="10">
+        <!--<div class="item" data-nome="Pastel Frango com Requeijão" data-preco="10">
           <div class="info">
             <h3>Frango com Requeijão</h3>
             <p class="descricao">Pastel recheado com frango desfiado e requeijão.
@@ -226,7 +243,7 @@
             <span class="valor" aria-live="polite">0</span>
             <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
           </div>
-        </div>
+        </div>-->
 
         <div class="item" data-nome="Frango e Queijo coalho e bacon" data-preco="12.50">
           <div class="info">
@@ -275,7 +292,7 @@
           </div>
         </div>
 
-        <section class="grupo-sabor" id="carne">
+        <!--<section class="grupo-sabor" id="carne">
           <h2 class="categoria">Pastéis de Carne</h2>
 
           <div class="item" data-nome="Carne Moída" data-preco="8">
@@ -333,9 +350,9 @@
               <span class="valor" aria-live="polite">0</span>
               <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
             </div>
-          </div>
+          </div>-->
 
-          <!--<section class="grupo-sabor" id="petiscos"></section>
+        <!--<section class="grupo-sabor" id="petiscos"></section>
           <h2 class="categoria">Petiscos</h2>
 
           <div class="item" data-nome="Batata Frita G" data-preco="10">
@@ -366,7 +383,7 @@
             </div>
           </div>-->
 
-          <!--<h2 class="categoria">Bebidas</h2>
+        <!--<h2 class="categoria">Bebidas</h2>
             <section class="grupo-sabor" id="bebidas"></section>
               <div class="item" data-nome="Refrigerante Coca-Cola 250ml pet" data-preco="3.5">
               <div class="info">
@@ -396,32 +413,32 @@
               </div>
             </div>-->
 
-          <div class="cliente" id="cliente">
-            <p><strong>Endereço de Entrega</strong></p>
-            <label for="nome" class="sr-only">Seu nome</label>
-            <input type="text" id="nome" placeholder="Seu nome" required />
-            <label for="endereco" class="sr-only">Endereço para entrega</label>
-            <textarea id="endereco" placeholder="Endereço para entrega" required></textarea>
-          </div>
-          <div class="pagamento">
-            <p><strong>Forma de Pagamento</strong></p>
-            <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
-            <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
-            <!--<label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>-->
-          </div>
+        <div class="cliente" id="cliente">
+          <p><strong>Endereço de Entrega</strong></p>
+          <label for="nome" class="sr-only">Seu nome</label>
+          <input type="text" id="nome" placeholder="Seu nome" required />
+          <label for="endereco" class="sr-only">Endereço para entrega</label>
+          <textarea id="endereco" placeholder="Endereço para entrega" required></textarea>
+        </div>
+        <div class="pagamento">
+          <p><strong>Forma de Pagamento</strong></p>
+          <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
+          <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
+          <!--<label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>-->
+        </div>
 
-          <div class="footer">
-            <p id="total" aria-live="polite">Total: R$ 0,00</p>
-            <ul id="cart-list" class="cart-list" aria-live="polite" aria-atomic="true">
-              <li class="empty">Carrinho vazio</li>
-            </ul>
-            <button id="btn-finalizar">Finalizar Pedido</button>
-          </div>
+        <div class="footer">
+          <p id="total" aria-live="polite">Total: R$ 0,00</p>
+          <ul id="cart-list" class="cart-list" aria-live="polite" aria-atomic="true">
+            <li class="empty">Carrinho vazio</li>
+          </ul>
+          <button id="btn-finalizar">Finalizar Pedido</button>
+        </div>
 
-          <button id="btn-limpar" class="btn-limpar">Limpar Carrinho</button>
+        <button id="btn-limpar" class="btn-limpar">Limpar Carrinho</button>
 
-          <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
-          <p class="credito">Todos os Direitos Reservados</p>
+        <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
+        <p class="credito">Todos os Direitos Reservados</p>
   </main>
 
   <footer>
