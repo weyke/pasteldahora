@@ -118,6 +118,20 @@
         </div>
       </div>
 
+      <div class="item" data-nome="Carne Moída com Queijo coalho" data-preco="10">
+        <div class="info">
+          <h3>Carne Moída com Queijo coalho</h3>
+          <p class="descricao">Massa crocante, com recheio de carne moída com queijo coalho</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo coalho">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
       <div class="item" data-nome="Pastel Frango Cheddar bacon " data-preco="12">
         <div class="info">
           <h3>Frango com Cheddar e bacon</h3>
@@ -132,7 +146,7 @@
         </div>
       </div>
 
-            <div class="item" data-nome="Pastel X-tudo " data-preco="12,50">
+      <div class="item" data-nome="Pastel X-tudo " data-preco="12,50">
         <div class="info">
           <h3>X-TUDO</h3>
           <p class="descricao">Pastel recheado com carne moída, frango, presunto, coalho, calabresa e bacon.
@@ -289,10 +303,10 @@
             </div>
           </div>
 
-        <section class="grupo-sabor" id="petiscos"></section>
-        <h2 class="categoria">Petiscos</h2>
-        
-        <div class="item" data-nome="Porção de Coxinha 12und" data-preco="10">
+          <section class="grupo-sabor" id="petiscos"></section>
+          <h2 class="categoria">Petiscos</h2>
+          
+          <div class="item" data-nome="Porção de Coxinha 12und" data-preco="10">
             <div class="info">
               <h3>Porção de Coxinha </h3>
               <p class="descricao">12 und</p>
@@ -376,32 +390,32 @@
               </div>
             </div>-->
 
-        <div class="cliente" id="cliente">
-          <p><strong>Endereço de Entrega</strong></p>
-          <label for="nome" class="sr-only">Seu nome</label>
-          <input type="text" id="nome" placeholder="Seu nome" required />
-          <label for="endereco" class="sr-only">Endereço para entrega</label>
-          <textarea id="endereco" placeholder="Endereço para entrega" required></textarea>
-        </div>
-        <div class="pagamento">
-          <p><strong>Forma de Pagamento</strong></p>
-          <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
-          <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
-          <!--<label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>-->
-        </div>
+          <div class="cliente" id="cliente">
+            <p><strong>Endereço de Entrega</strong></p>
+            <label for="nome" class="sr-only">Seu nome</label>
+            <input type="text" id="nome" placeholder="Seu nome" required />
+            <label for="endereco" class="sr-only">Endereço para entrega</label>
+            <textarea id="endereco" placeholder="Endereço para entrega" required></textarea>
+          </div>
+          <div class="pagamento">
+            <p><strong>Forma de Pagamento</strong></p>
+            <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
+            <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
+            <!--<label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>-->
+          </div>
 
-        <div class="footer">
-          <p id="total" aria-live="polite">Total: R$ 0,00</p>
-          <ul id="cart-list" class="cart-list" aria-live="polite" aria-atomic="true">
-            <li class="empty">Carrinho vazio</li>
-          </ul>
-          <button id="btn-finalizar">Finalizar Pedido</button>
-        </div>
+          <div class="footer">
+            <p id="total" aria-live="polite">Total: R$ 0,00</p>
+            <ul id="cart-list" class="cart-list" aria-live="polite" aria-atomic="true">
+              <li class="empty">Carrinho vazio</li>
+            </ul>
+            <button id="btn-finalizar">Finalizar Pedido</button>
+          </div>
 
-        <button id="btn-limpar" class="btn-limpar">Limpar Carrinho</button>
+          <button id="btn-limpar" class="btn-limpar">Limpar Carrinho</button>
 
-        <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
-        <p class="credito">Todos os Direitos Reservados</p>
+          <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
+          <p class="credito">Todos os Direitos Reservados</p>
   </main>
 
   <footer>
