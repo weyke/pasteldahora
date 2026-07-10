@@ -16,17 +16,16 @@
 
 <body>
 
-  <header>
+  <header class="header">
     <div class="banner-copa">
       <img src="img/logo.png" alt="Pastel da Hora — Promoção Copa do Brasil">
     </div>
-
     <div id="aviso" class="aviso" aria-live="polite"></div>
   </header>
 
-  <main>
+  <main class="container">
 
-    <h1>Cardápio</h1>
+    <h1 class="titulo-principal">Cardápio</h1>
 
     <div id="aviso-horario" class="aviso-horario" style="display:none;">
       <div class="aviso-conteudo">
@@ -34,9 +33,7 @@
         <div class="aviso-texto">
           <div class="aviso-titulo">Loja Fechada</div>
           <div class="aviso-detalhes">
-            <span class="aviso-horario-info">Voltamos: <strong>18
-
-                h às 22h</strong></span>
+            <span class="aviso-horario-info">Voltamos: <strong>18h às 22h</strong></span>
             <span class="aviso-dias-info">📅 Sex · Sab ·</span>
           </div>
         </div>
@@ -47,63 +44,62 @@
 
     <!-- PASTEL CUSTOMIZADO -->
     <section class="grupo-sabor" id="custom">
-      <h2 class="categoria toggle-custom">👉 Monte seu pastel aqui 👈
-        <div id="custom-content" class="custom-card custom-card-hidden">
-          <div class="custom-toppings">
-
-            <label><strong>Escolha seus sabores:</strong></label>
-
-            <div class="base-info">
-              <p><strong>Massa R$ 5,00</strong></p>
-            </div>
-            <div class="toppings-grid">
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="frango" data-preco="3.00">
-                <span>Frango</span> <span class="price">+R$ 3,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="carne" data-preco="3.00">
-                <span>Carne</span> <span class="price">+R$ 3,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="bacon" data-preco="2.00">
-                <span>Bacon</span> <span class="price">+R$ 2,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="mussarela" data-preco="2.00">
-                <span>Mussarela</span> <span class="price">+R$ 2,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="cheddar" data-preco="2.00">
-                <span>Cheddar</span> <span class="price">+R$ 2,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="requeijão" data-preco="2.00">
-                <span>Requeijão</span> <span class="price">+R$ 2,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="presunto" data-preco="2.00">
-                <span>Presunto</span> <span class="price">+R$ 2,00</span>
-              </label>
-              <label class="topping">
-                <input type="checkbox" name="custom-topping" value="calabresa" data-preco="2.00">
-                <span>Calabresa</span> <span class="price">+R$ 2,00</span>
-              </label>
-            </div>
+      <h2 class="toggle-custom">👉 Monte seu pastel aqui 👈</h2>
+      <div id="custom-content" class="custom-card custom-card-hidden">
+        <div class="custom-toppings">
+          <label><strong>Escolha seus sabores:</strong></label>
+          <div class="base-info">
+            <p><strong>Massa R$ 5,00</strong></p>
           </div>
-
-          <div class="custom-summary">
-            <div class="price-display">
-              <span>Total:</span>
-              <strong id="custom-total">R$ 5,00</strong>
-            </div>
-            <button id="custom-add-btn" class="btn-add-custom">Adicionar</button>
+          <div class="toppings-grid">
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="frango" data-preco="3.00">
+              <span>Frango</span> <span class="price">+R$ 3,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="carne" data-preco="3.00">
+              <span>Carne</span> <span class="price">+R$ 3,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="bacon" data-preco="2.00">
+              <span>Bacon</span> <span class="price">+R$ 2,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="mussarela" data-preco="2.00">
+              <span>Mussarela</span> <span class="price">+R$ 2,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="cheddar" data-preco="2.00">
+              <span>Cheddar</span> <span class="price">+R$ 2,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="requeijão" data-preco="2.00">
+              <span>Requeijão</span> <span class="price">+R$ 2,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="presunto" data-preco="2.00">
+              <span>Presunto</span> <span class="price">+R$ 2,00</span>
+            </label>
+            <label class="topping">
+              <input type="checkbox" name="custom-topping" value="calabresa" data-preco="2.00">
+              <span>Calabresa</span> <span class="price">+R$ 2,00</span>
+            </label>
           </div>
         </div>
+        <div class="custom-summary">
+          <div class="price-display">
+            <span>Total:</span>
+            <strong id="custom-total">R$ 5,00</strong>
+          </div>
+          <button id="custom-add-btn" class="btn-add-custom">Adicionar</button>
+        </div>
+      </div>
     </section>
 
+    <!-- ESPECIAL DO DIA -->
     <section class="grupo-sabor">
       <h2 class="promo">Especial do Dia</h2>
+
       <div class="item" data-nome="Frango e Queijo coalho" data-preco="10">
         <div class="info">
           <h3>Frango e Queijo coalho</h3>
@@ -132,7 +128,7 @@
         </div>
       </div>
 
-      <div class="item" data-nome="Pastel Frango Cheddar bacon " data-preco="12">
+      <div class="item" data-nome="Pastel Frango Cheddar bacon" data-preco="12">
         <div class="info">
           <h3>Frango com Cheddar e bacon</h3>
           <p class="descricao">Pastel recheado com frango desfiado com cheddar e bacon.</p>
@@ -146,11 +142,10 @@
         </div>
       </div>
 
-      <div class="item" data-nome="Pastel X-tudo " data-preco="12,50">
+      <div class="item" data-nome="Pastel X-tudo" data-preco="12.50">
         <div class="info">
           <h3>X-TUDO</h3>
-          <p class="descricao">Pastel recheado com carne moída, frango, presunto, coalho, calabresa e bacon.
-          </p>
+          <p class="descricao">Pastel recheado com carne moída, frango, presunto, coalho, calabresa e bacon.</p>
           <strong>R$ 12,50</strong>
         </div>
         <img class="foto-produto" src="img/xtudo.png" alt="Pastel X-Tudo">
@@ -160,267 +155,205 @@
           <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
         </div>
       </div>
+    </section>
 
+    <!-- PASTÉIS DE FRANGO -->
+    <section class="grupo-sabor" id="frango">
+      <h2 class="categoria">Pastéis de Frango</h2>
 
-      <section class="grupo-sabor" id="frango">
-        <h2 class="categoria">Pastéis de Frango</h2>
-
-        <div class="item" data-nome="Frango" data-preco="8">
-          <div class="info">
-            <h3>Frango</h3>
-            <p class="descricao">Massa crocante, com recheio de frango temperado</p>
-            <strong>R$ 8,00</strong>
-          </div>
-          <img class="foto-produto" src="img/frango.png" alt="Pastel de Frango">
-          <div class="qtd vertical">
-            <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-            <span class="valor" aria-live="polite">0</span>
-            <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-          </div>
+      <div class="item" data-nome="Frango" data-preco="8">
+        <div class="info">
+          <h3>Frango</h3>
+          <p class="descricao">Massa crocante, com recheio de frango temperado</p>
+          <strong>R$ 8,00</strong>
         </div>
-
-
-
-        <div class="item" data-nome="Pastel Frango com cheddar" data-preco="10">
-          <div class="info">
-            <h3>Frango com cheddar</h3>
-            <p class="descricao">Pastel recheado com frango desfiado e cheddar cremoso.
-            </p>
-            <strong>R$ 10,00</strong>
-          </div>
-          <img class="foto-produto" src="img/frango-cheddar2.png" alt="Pastel Frango com cheddar">
-          <div class="qtd vertical">
-            <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-            <span class="valor" aria-live="polite">0</span>
-            <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-          </div>
+        <img class="foto-produto" src="img/frango.png" alt="Pastel de Frango">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
         </div>
+      </div>
 
-        <!--<div class="item" data-nome="Pastel Frango com Requeijão" data-preco="10">
-          <div class="info">
-            <h3>Frango com Requeijão</h3>
-            <p class="descricao">Pastel recheado com frango desfiado e requeijão.
-            </p>
-            <strong>R$ 10,00</strong>
-          </div>
-          <img class="foto-produto" src="img/frango-requeijao.png" alt="Pastel Frango com Requeijão">
-          <div class="qtd vertical">
-            <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-            <span class="valor" aria-live="polite">0</span>
-            <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-          </div>
-        </div>-->
-
-        <div class="item" data-nome="Frango e Queijo coalho e bacon" data-preco="12.50">
-          <div class="info">
-            <h3>Frango e Queijo coalho e bacon</h3>
-            <p class="descricao">Massa crocante, com recheio de frango com queijo coalho e bacon</p>
-            <strong>R$ 12,50</strong>
-          </div>
-          <img class="foto-produto" src="img/frango-quei-bacon.png" alt="Pastel Frango e Queijo coalho e bacon">
-          <div class="qtd vertical">
-            <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-            <span class="valor" aria-live="polite">0</span>
-            <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-          </div>
+      <div class="item" data-nome="Pastel Frango com cheddar" data-preco="10">
+        <div class="info">
+          <h3>Frango com cheddar</h3>
+          <p class="descricao">Pastel recheado com frango desfiado e cheddar cremoso.</p>
+          <strong>R$ 10,00</strong>
         </div>
-
-      </section>
-
-      <section class="grupo-sabor" id="queijo">
-        <h2 class="categoria">Pastéis de Queijo coalho</h2>
-
-        <div class="item" data-nome="Queijo coalho" data-preco="8">
-          <div class="info">
-            <h3>Queijo coalho</h3>
-            <p class="descricao">Massa crocante, com recheio de queijo coalho</p>
-            <strong>R$ 8,00</strong>
-          </div>
-          <img class="foto-produto" src="img/frango-quei2.png" alt="Pastel frango e queijo coalho">
-          <div class="qtd vertical">
-            <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-            <span class="valor" aria-live="polite">0</span>
-            <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-          </div>
+        <img class="foto-produto" src="img/frango-cheddar2.png" alt="Pastel Frango com cheddar">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
         </div>
+      </div>
 
-        <div class="item" data-nome="Misto" data-preco="9">
-          <div class="info">
-            <h3>Misto</h3>
-            <p class="descricao">Massa crocante, com recheio de queijo coalho e presunto</p>
-            <strong>R$ 9,00</strong>
-          </div>
-          <img class="foto-produto" src="img/misto.png" alt="Pastel misto - queijo e presunto">
-          <div class="qtd vertical">
-            <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-            <span class="valor" aria-live="polite">0</span>
-            <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-          </div>
+      <div class="item" data-nome="Frango e Queijo coalho e bacon" data-preco="12.50">
+        <div class="info">
+          <h3>Frango e Queijo coalho e bacon</h3>
+          <p class="descricao">Massa crocante, com recheio de frango com queijo coalho e bacon</p>
+          <strong>R$ 12,50</strong>
         </div>
+        <img class="foto-produto" src="img/frango-quei-bacon.png" alt="Pastel Frango e Queijo coalho e bacon">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+    </section>
 
-        <section class="grupo-sabor" id="carne">
-          <h2 class="categoria">Pastéis de Carne</h2>
+    <!-- PASTÉIS DE QUEIJO -->
+    <section class="grupo-sabor" id="queijo">
+      <h2 class="categoria">Pastéis de Queijo coalho</h2>
 
-          <div class="item" data-nome="Carne Moída" data-preco="8">
-            <div class="info">
-              <h3>Carne Moída</h3>
-              <p class="descricao">Massa crocante, com recheio de carne moída</p>
-              <strong>R$ 8,00</strong>
-            </div>
-            <img class="foto-produto" src="img/carne-ajeitona.png" alt="Pastel carne moída">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
+      <div class="item" data-nome="Queijo coalho" data-preco="8">
+        <div class="info">
+          <h3>Queijo coalho</h3>
+          <p class="descricao">Massa crocante, com recheio de queijo coalho</p>
+          <strong>R$ 8,00</strong>
+        </div>
+        <img class="foto-produto" src="img/frango-quei2.png" alt="Pastel frango e queijo coalho">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
 
-          <div class="item" data-nome="Carne Moída com Queijo coalho" data-preco="10">
-            <div class="info">
-              <h3>Carne Moída com Queijo coalho</h3>
-              <p class="descricao">Massa crocante, com recheio de carne moída com queijo coalho</p>
-              <strong>R$ 10,00</strong>
-            </div>
-            <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo coalho">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
+      <div class="item" data-nome="Misto" data-preco="9">
+        <div class="info">
+          <h3>Misto</h3>
+          <p class="descricao">Massa crocante, com recheio de queijo coalho e presunto</p>
+          <strong>R$ 9,00</strong>
+        </div>
+        <img class="foto-produto" src="img/misto.png" alt="Pastel misto - queijo e presunto">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+    </section>
 
-          <div class="item" data-nome="Carne Moída com Queijo coalho e requeijão" data-preco="11">
-            <div class="info">
-              <h3>Carne Moída com Queijo coalho e requeijão</h3>
-              <p class="descricao">Massa crocante, com recheio de carne moída com queijo coalho</p>
-              <strong>R$ 11,00</strong>
-            </div>
-            <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo coalho">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
+    <!-- PASTÉIS DE CARNE -->
+    <section class="grupo-sabor" id="carne">
+      <h2 class="categoria">Pastéis de Carne</h2>
 
-          <section class="grupo-sabor" id="petiscos"></section>
-          <h2 class="categoria">Petiscos</h2>
-          
-          <div class="item" data-nome="Porção de Coxinha de calabresa com queijo" data-preco="10">
-            <div class="info">
-              <h3>Porção de Coxinha de calabresa com queijo </h3>
-              <p class="descricao">12 und</p>
-              <strong>R$ 10,00</strong>
-            </div>
-            <img class="foto-produto" src="img/coxinha.png" alt="Porção de Coxinha">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
-          <div class="item" data-nome="Porção de bolinha de queijo 12und" data-preco="10">
-            <div class="info">
-              <h3>Porção bolinha de queijo 12und </h3>
-              <p class="descricao">12 und</p>
-              <strong>R$ 10,00</strong>
-            </div>
-            <img class="foto-produto" src="img/bolinha-q.png" alt="Porção de bolinha de queijo">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
-          <!--<div class="item" data-nome="Batata Frita G" data-preco="10">
-            <div class="info">
-              <h3>Batata Frita G</h3>
-              <p class="descricao">Tamanho G</p>
-              <strong>R$ 10,00</strong>
-            </div>
-            <img class="foto-produto" src="img/batata.png" alt="Batata frita">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
+      <div class="item" data-nome="Carne Moída" data-preco="8">
+        <div class="info">
+          <h3>Carne Moída</h3>
+          <p class="descricao">Massa crocante, com recheio de carne moída</p>
+          <strong>R$ 8,00</strong>
+        </div>
+        <img class="foto-produto" src="img/carne-ajeitona.png" alt="Pastel carne moída">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
 
-          <div class="item" data-nome="Batata Frita G + cheddar e bacon + " data-preco="15">
-            <div class="info">
-              <h3>Batata Frita G Com cheddar e bacon</h3>
-              <p class="descricao">Tamanho G</p>
-              <strong>R$ 15,00</strong>
-            </div>
-            <img class="foto-produto" src="img/cheddar.png" alt="Batata Frita G com cheddar e bacon">
-            <div class="qtd vertical">
-              <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-              <span class="valor" aria-live="polite">0</span>
-              <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-            </div>
-          </div>
+      <div class="item" data-nome="Carne Moída com Queijo coalho" data-preco="10">
+        <div class="info">
+          <h3>Carne Moída com Queijo coalho</h3>
+          <p class="descricao">Massa crocante, com recheio de carne moída com queijo coalho</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo coalho">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
 
-        <h2 class="categoria">Bebidas</h2>
-            <section class="grupo-sabor" id="bebidas"></section>
-              <div class="item" data-nome="Refrigerante Coca-Cola 250ml pet" data-preco="3.5">
-              <div class="info">
-                <h3>Refrigerante Coca-Cola 250ml pet</h3>
-                <p class="descricao">Pet 250ml</p>
-                <strong>R$ 3,50</strong>
-              </div>
-              <img class="foto-produto" src="img/coca-pet250.png" alt="Refrigerante Coca-Cola 250ml pet">
-              <div class="qtd vertical">
-                <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
-                <span class="valor" aria-live="polite">0</span>
-                <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
-              </div>
-            </div>
+      <div class="item" data-nome="Carne Moída com Queijo coalho e requeijão" data-preco="11">
+        <div class="info">
+          <h3>Carne Moída com Queijo coalho e requeijão</h3>
+          <p class="descricao">Massa crocante, com recheio de carne moída com queijo coalho</p>
+          <strong>R$ 11,00</strong>
+        </div>
+        <img class="foto-produto" src="img/carne-queijo.png" alt="Pastel carne com queijo coalho">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+    </section>
 
-            <div class="item" data-nome="Refrigerante São Geraldo lata 350ml" data-preco="4.5">
-              <div class="info">
-                <h3>Refrigerante São Geraldo lata 350ml</h3>
-                <p class="descricao">Lata 350ml</p>
-                <strong>R$ 4,50</strong>
-              </div>
-              <img class="foto-produto" src="img/cajuina-lata.png" alt="Refrigerante São Geraldo lata 350ml">
-              <div class="qtd vertical">
-                <button onclick="alterarQtd(this, 1)">+</button>
-                <span class="valor">0</span>
-                <button onclick="alterarQtd(this, -1)">−</button>
-              </div>
-            </div>-->
+    <!-- PETISCOS -->
+    <section class="grupo-sabor" id="petiscos">
+      <h2 class="categoria">Petiscos</h2>
 
-          <div class="cliente" id="cliente">
-            <p><strong>Endereço de Entrega</strong></p>
-            <label for="nome" class="sr-only">Seu nome</label>
-            <input type="text" id="nome" placeholder="Seu nome" required />
-            <label for="endereco" class="sr-only">Endereço para entrega</label>
-            <textarea id="endereco" placeholder="Endereço para entrega" required></textarea>
-          </div>
-          <div class="pagamento">
-            <p><strong>Forma de Pagamento</strong></p>
-            <label><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
-            <label><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
-            <!--<label><input type="radio" name="pagamento" value="Cartão"> 💳 Cartão</label>-->
-          </div>
+      <div class="item" data-nome="Porção de Coxinha de calabresa com queijo" data-preco="10">
+        <div class="info">
+          <h3>Porção de Coxinha de calabresa com queijo</h3>
+          <p class="descricao">12 und</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/coxinha.png" alt="Porção de Coxinha">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
 
-          <div class="footer">
-            <p id="total" aria-live="polite">Total: R$ 0,00</p>
-            <ul id="cart-list" class="cart-list" aria-live="polite" aria-atomic="true">
-              <li class="empty">Carrinho vazio</li>
-            </ul>
-            <button id="btn-finalizar">Finalizar Pedido</button>
-          </div>
+      <div class="item" data-nome="Porção de bolinha de queijo 12und" data-preco="10">
+        <div class="info">
+          <h3>Porção bolinha de queijo 12und</h3>
+          <p class="descricao">12 und</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/bolinha-q.png" alt="Porção de bolinha de queijo">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+    </section>
 
-          <button id="btn-limpar" class="btn-limpar">Limpar Carrinho</button>
+    <!-- CLIENTE / ENTREGA -->
+    <div class="cliente" id="cliente">
+      <p><strong>Endereço de Entrega</strong></p>
+      <label for="nome" class="sr-only">Seu nome</label>
+      <input type="text" id="nome" placeholder="Seu nome" required />
+      <label for="endereco" class="sr-only">Endereço para entrega</label>
+      <textarea id="endereco" placeholder="Endereço para entrega" required></textarea>
+    </div>
 
-          <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
-          <p class="credito">Todos os Direitos Reservados</p>
+    <!-- PAGAMENTO -->
+    <div class="pagamento">
+      <p><strong>Forma de Pagamento</strong></p>
+      <div class="pagamento-opcoes">
+        <label class="pagamento-option"><input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro</label>
+        <label class="pagamento-option"><input type="radio" name="pagamento" value="Pix"> 📲 Pix</label>
+      </div>
+    </div>
+
+    <!-- CARRINHO / FINALIZAR -->
+    <div class="footer">
+      <p id="total" aria-live="polite">Total: R$ 0,00</p>
+      <ul id="cart-list" class="cart-list" aria-live="polite" aria-atomic="true">
+        <li class="empty">Carrinho vazio</li>
+      </ul>
+      <button id="btn-finalizar">Finalizar Pedido</button>
+    </div>
+
+    <button id="btn-limpar" class="btn-limpar">Limpar Carrinho</button>
+
+    <p class="credito">©2026 Desenvolvido por @Weyke Saboia</p>
+    <p class="credito">Todos os Direitos Reservados</p>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p class="credito">Obrigado pela preferência!</p>
   </footer>
+
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <div class="lightbox-content" role="document">
       <img id="lightbox-img" src="" alt="">
