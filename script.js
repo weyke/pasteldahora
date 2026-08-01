@@ -315,7 +315,7 @@ function verificarHorario() {
   const minuto = agora.getMinutes();
 
   // Dias permitidos:   Quinta(4), Sexta(5), Sábado(6)
-  const diasAbertos = [  6 ];
+  const diasAbertos = [  0 ];
   const diaPermitido = diasAbertos.includes(diaSemana);
 
   // Atendimento das 18h às 22h
