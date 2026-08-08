@@ -87,6 +87,13 @@ function formatarMoeda(valor) {
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
 }
 
+function parsePreco(valor) {
+  if (valor === null || valor === undefined || valor === '') return 0;
+  const normalizado = String(valor).replace(',', '.');
+  const num = Number(normalizado);
+  return isNaN(num) ? 0 : num;
+}
+
 function mostrarAviso(mensagem, tipo = 'info') {
   const aviso = document.getElementById('aviso');
   if (!aviso) return;
@@ -136,7 +143,7 @@ function calcularTotal() {
 
   itens.forEach(item => {
     const qtd = Number(item.querySelector('.valor').innerText);
-    const preco = Number(item.dataset.preco);
+    const preco = parsePreco(item.dataset.preco);
 
     if (!isNaN(qtd) && !isNaN(preco)) {
       total += qtd * preco;
@@ -161,7 +168,7 @@ function atualizarListaCarrinho() {
     if (qtd > 0) {
       any = true;
       const nome = item.dataset.nome || (item.querySelector('.info h3') ? item.querySelector('.info h3').innerText : 'Item');
-      const preco = Number(item.dataset.preco) || 0;
+      const preco = parsePreco(item.dataset.preco);
       const subtotal = qtd * preco;
 
       const li = document.createElement('li');
@@ -220,7 +227,7 @@ function enviarWhatsApp(maioneseSolicitada) {
     if (qtd > 0) {
       temItem = true;
       const nomeItem = item.dataset.nome;
-      const preco = Number(item.dataset.preco);
+      const preco = parsePreco(item.dataset.preco);
       const subtotal = qtd * preco;
 
       total += subtotal;
@@ -444,7 +451,7 @@ function atualizarPrecoCustom() {
   let preco = 5.00; // preço base fixo
 
   toppingCheckboxes.forEach(checkbox => {
-    preco += Number(checkbox.dataset.preco) || 0;
+    preco += parsePreco(checkbox.dataset.preco);
   });
 
   const totalEl = document.getElementById('custom-total');
@@ -474,7 +481,7 @@ function adicionarCustomAoCarrinho() {
   // calcular preço: base 5.00 + adicionais
   let preco = 5.00;
   toppingCheckboxesChecked.forEach(checkbox => {
-    preco += Number(checkbox.dataset.preco) || 0;
+    preco += parsePreco(checkbox.dataset.preco);
   });
 
   // criar item fake e adicionar ao carrinho
