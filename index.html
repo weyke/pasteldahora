@@ -288,6 +288,20 @@
     <section class="grupo-sabor" id="petiscos">
       <h2 class="categoria">Petiscos</h2>
 
+            <div class="item" data-nome="batata frita G " data-preco="10">
+        <div class="info">
+          <h3>Batata Frita G</h3>
+          <p class="descricao">Batata Frita G</p>
+          <strong>R$ 10,00</strong>
+        </div>
+        <img class="foto-produto" src="img/batata.png" alt="Porção de Batata Frita">
+        <div class="qtd vertical">
+          <button class="qty-btn" data-delta="1" aria-label="Adicionar 1 item">+</button>
+          <span class="valor" aria-live="polite">0</span>
+          <button class="qty-btn" data-delta="-1" aria-label="Remover 1 item">−</button>
+        </div>
+      </div>
+
       <div class="item" data-nome="Porção de Coxinha de frango" data-preco="10">
         <div class="info">
           <h3>Porção de Coxinha de frango</h3>
@@ -304,7 +318,7 @@
 
       <div class="item" data-nome="Porção de bolinha de queijo 12und" data-preco="10">
         <div class="info">
-          <h3>Porção bolinha de queijo 12und</h3>
+          <h3>Porção bolinha de queijo</h3>
           <p class="descricao">12 und</p>
           <strong>R$ 10,00</strong>
         </div>
@@ -357,6 +371,19 @@
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <div class="lightbox-content" role="document">
       <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
+  <!-- MODAL MAIONESE -->
+  <div id="maionese-modal" class="maionese-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <div class="icon-maionese">🥣</div>
+      <h2>Quer maionese temperada?</h2>
+      <div class="subtitulo">Acompanha seus pedidos 🧡</div>
+      <div class="maionese-opcoes">
+        <button class="btn-maionese sim" data-maionese-value="Sim, quero maionese temperada">✅ Sim</button>
+        <button class="btn-maionese nao" data-maionese-value="Não, sem maionese">❌ Não</button>
+      </div>
     </div>
   </div>
 </body>
