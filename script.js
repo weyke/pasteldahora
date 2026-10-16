@@ -48,16 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // botões do modal de maionese
-  document.querySelectorAll('#maionese-modal .btn-maionese').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const valor = btn.dataset.maioneseValue || '';
-      fecharModalMaionese();
-      irParaCliente();
-      setTimeout(() => enviarWhatsApp(valor), 300);
-    });
-  });
-
   // Pastel Customizado
   setupCustomPastel();
 
@@ -188,7 +178,7 @@ function atualizarListaCarrinho() {
 /* =========================
    WHATSAPP
 ========================= */
-function enviarWhatsApp(maioneseSolicitada) {
+function enviarWhatsApp() {
   const nome = document.getElementById('nome').value.trim();
   const endereco = document.getElementById('endereco').value.trim();
   const pagamentoEl = document.querySelector('input[name="pagamento"]:checked');
@@ -205,8 +195,6 @@ function enviarWhatsApp(maioneseSolicitada) {
     return;
   }
 
-  const maionese = maioneseSolicitada || 'Não informado';
-
   let mensagem = `🍟 *NOVO PEDIDO* 🍟%0A`;
   mensagem += `━━━━━━━━━━━━━━%0A%0A`;
   mensagem += `🙂 *Cliente*%0A`;
@@ -214,8 +202,6 @@ function enviarWhatsApp(maioneseSolicitada) {
   mensagem += `Endereço: ${endereco}%0A%0A`;
   mensagem += `💲 *Pagamento*%0A`;
   mensagem += `${pagamentoEl.value}%0A%0A`;
-  mensagem += `🥣 *Maionese temperada*%0A`;
-  mensagem += `${maionese}%0A%0A`;
   mensagem += `🧾 *Itens do pedido*%0A`;
 
   let temItem = false;
@@ -322,24 +308,7 @@ function limparCarrinho() {
    FINALIZAR PEDIDO
 ========================= */
 function finalizarPedido() {
-  abrirModalMaionese();
-}
-
-function abrirModalMaionese() {
-  const modal = document.getElementById('maionese-modal');
-  if (!modal) {
-    enviarWhatsApp();
-    return;
-  }
-  modal.classList.add('show');
-  modal.setAttribute('aria-hidden', 'false');
-}
-
-function fecharModalMaionese() {
-  const modal = document.getElementById('maionese-modal');
-  if (!modal) return;
-  modal.classList.remove('show');
-  modal.setAttribute('aria-hidden', 'true');
+  enviarWhatsApp();
 }
 
 /* =========================
